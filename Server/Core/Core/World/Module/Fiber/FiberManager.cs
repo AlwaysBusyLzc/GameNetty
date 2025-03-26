@@ -61,6 +61,16 @@ namespace ET
             this.fibers = null;
         }
 
+        /**
+         * 描述: 创建fiber
+         * 参数:
+         *  schedulerType 调度类型
+         *  fiberId sceneId
+         *  zone 区服id
+         *  sceneType sceneType
+         *  name sceneName
+         * 返回值: fiberId
+         */
         public async ETTask<int> Create(SchedulerType schedulerType, int fiberId, int zone, SceneType sceneType, string name)
         {
             try

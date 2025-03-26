@@ -33,7 +33,7 @@ namespace ET
             this.Fiber = fiber;
             this.IScene = this;
             this.IsRegister = true;
-            Log.Info($"scene create: {this.SceneType} {this.Id} {this.InstanceId}");
+            Log.Info($"scene create, sceneType: {this.SceneType}, Id: {this.Id}, InstanceId: {this.InstanceId}");
         }
 
         public override void Dispose()
