@@ -26,11 +26,13 @@ namespace ET
 
                 foreach (object o in objects)
                 {
+                    // 根据 attribute 的类型 找到所有添加了此 attribute 的类
                     this.types.Add(o.GetType(), type);
                 }
             }
         }
 
+        // 找到所有添加了此 attribute 的类
         public HashSet<Type> GetTypes(Type systemAttributeType)
         {
             if (!this.types.ContainsKey(systemAttributeType))

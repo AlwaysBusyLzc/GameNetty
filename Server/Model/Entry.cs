@@ -1,5 +1,4 @@
-﻿using MemoryPack;
-using MongoDB.Bson;
+﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Serializers;
 
 namespace ET

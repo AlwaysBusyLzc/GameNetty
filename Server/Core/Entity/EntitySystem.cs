@@ -16,6 +16,7 @@ namespace ET
         }
         
         
+        // Entity 设置 IScene 时会调用此函数
         public virtual void RegisterSystem(Entity component)
         {
             Type type = component.GetType();
