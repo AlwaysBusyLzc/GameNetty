@@ -36,6 +36,8 @@
         <Compile Include="..\..\Unity\Assets\Scripts\Hotfix\Share\**\*.cs">
             <Link>Share\%(RecursiveDir)%(FileName)%(Extension)</Link> 
         </Compile> 
+
+        <Compile Remove="Hotfix\**" /> 
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
@@ -46,7 +48,12 @@
     <ItemGroup>
       <Folder Include="Demo\Robot\Case\" />
       <Folder Include="Demo\Robot\Scene\" />
-      <Folder Include="Hotfix\" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Remove="Hotfix\**" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Remove="Hotfix\**" />
     </ItemGroup>
 
 </Project>
