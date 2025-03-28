@@ -12,7 +12,7 @@ namespace ET
         public int Opcode;
     }
 
-    public static class Proto2CS
+    public static class Proto2MemPackCS
     {
         public static void Export(string protoDirPath = "",string clientPath = "",string serverPath = "")
         {

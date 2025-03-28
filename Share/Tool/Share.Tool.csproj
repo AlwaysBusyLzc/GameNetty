@@ -31,6 +31,9 @@
     </PropertyGroup>
     
     <ItemGroup>
+        <Compile Include="..\..\Server\Core\Network\OpcodeRangeDefine.cs">
+          <Link>Module\Message\OpcodeRangeDefine.cs</Link>
+        </Compile>
         <Compile Include="..\..\Unity\Assets\Mono\Core\**\*.cs">
             <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
@@ -42,10 +45,6 @@
         <!-- <Compile Include="..\..\Server\Core\Core\World\Module\Log\**\*.cs">
             <Link>Module\Log\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile> -->
-
-        <Compile Include="..\..\Server\Core\Core\Network\OpcodeRangeDefine.cs">
-            <Link>Module\Message\OpcodeRangeDefine.cs</Link>
-        </Compile>
     </ItemGroup>
     
     <ItemGroup>
@@ -56,6 +55,7 @@
     
     <ItemGroup>
       <PackageReference Include="CommandLineParser" Version="2.8.0" />
+      <PackageReference Include="Google.Protobuf.Tools" Version="3.30.2" />
     </ItemGroup>
     
     <ItemGroup>

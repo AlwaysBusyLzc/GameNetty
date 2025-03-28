@@ -1,6 +1,22 @@
 syntax = "proto3";
 package ET;
 
+message float3
+{
+	float x = 1;
+	float y = 2;
+	float z = 3;
+}
+
+message quaternion
+{
+	float x = 1;
+	float y = 2;
+	float z = 3;
+	float w = 4;
+}
+
+
 message RouterSync
 {
 	uint32 ConnectId = 1;
@@ -39,8 +55,8 @@ message G2C_EnterMap // ISessionResponse
 
 message MoveInfo
 {
-	repeated Unity.Mathematics.float3 Points = 1;
-	Unity.Mathematics.quaternion Rotation = 2;
+	repeated float3 Points = 1;
+	quaternion Rotation = 2;
 	int32 TurnSpeed = 3;
 }
 
@@ -49,8 +65,8 @@ message UnitInfo
 	int64 UnitId = 1;
 	int32 ConfigId = 2;
 	int32 Type = 3;
-	Unity.Mathematics.float3 Position = 4;
-	Unity.Mathematics.float3 Forward = 5;
+	float3 Position = 4;
+	float3 Forward = 5;
 	map<int32, int64> KV = 6;
 	MoveInfo MoveInfo = 7;
 }
@@ -79,7 +95,7 @@ message M2C_RemoveUnits // IMessage
 message C2M_PathfindingResult // ILocationMessage
 {
 	int32 RpcId = 1;
-	Unity.Mathematics.float3 Position = 2;
+	float3 Position = 2;
 }
 
 message C2M_Stop // ILocationMessage
@@ -90,16 +106,16 @@ message C2M_Stop // ILocationMessage
 message M2C_PathfindingResult // IMessage
 {
 	int64 Id = 1;
-	Unity.Mathematics.float3 Position = 2;
-	repeated Unity.Mathematics.float3 Points = 3;
+	float3 Position = 2;
+	repeated float3 Points = 3;
 }
 
 message M2C_Stop // IMessage
 {
 	int32 Error = 1;
 	int64 Id = 2;
-	Unity.Mathematics.float3 Position = 3;
-	Unity.Mathematics.quaternion Rotation = 4;
+	float3 Position = 3;
+	quaternion Rotation = 4;
 }
 
 // ResponseType G2C_Ping

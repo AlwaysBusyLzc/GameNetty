@@ -32,7 +32,7 @@ namespace ET.Server
                 
                 ETTask.ExceptionHandler += Log.Error;
                 
-                Log.Info($"server start........................ ");
+                Log.Info($"tool start........................ ");
 
                 string protoDirPath = "";
                 string clientPath = "";
@@ -67,7 +67,7 @@ namespace ET.Server
                     case AppType.Proto2CS:
                     {
                         Options.Instance.Console = 1;
-                        Proto2CS.Export(protoDirPath,clientPath,serverPath);
+                        Proto2MemPackCS.Export(protoDirPath,clientPath,serverPath);
                         return 0;
                     }
                 }

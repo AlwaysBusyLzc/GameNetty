@@ -1,17 +1,13 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using MemoryPack;
 using MongoDB.Bson.Serialization.Attributes;
 
 namespace ET
 {
-    [MemoryPackable]
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct Address
     {
-        [MemoryPackOrder(0)]
         public int Process;
-        [MemoryPackOrder(1)]
         public int Fiber;
         
         public bool Equals(Address other)
@@ -50,8 +46,7 @@ namespace ET
             return $"{this.Process}:{this.Fiber}";
         }
     }
-    
-    [MemoryPackable]
+
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public partial struct ActorId
     {
@@ -70,9 +65,7 @@ namespace ET
             return HashCode.Combine(this.Address, this.InstanceId);
         }
 
-        [MemoryPackOrder(0)]
         public Address Address;
-        [MemoryPackOrder(1)]
         public long InstanceId;
 
         [BsonIgnore]

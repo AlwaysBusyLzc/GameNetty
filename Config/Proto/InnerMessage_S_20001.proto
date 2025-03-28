@@ -2,6 +2,19 @@ syntax = "proto3";
 
 package ET;
 
+message ProtoAddress
+{
+	int32 Process = 1;
+	int32 Fiber = 2;
+}
+
+message ProtoActorId
+{
+	ProtoAddress Address = 1;
+	int64 InstanceId = 2;
+}
+
+
 // ResponseType ObjectQueryResponse
 message ObjectQueryRequest // IRequest
 {
@@ -59,7 +72,7 @@ message ObjectAddRequest // IRequest
 	int32 RpcId = 1;
 	int32 Type = 2;
 	int64 Key = 3;
-	ActorId ActorId = 4;
+	ProtoActorId ActorId = 4;
 }
 
 message ObjectAddResponse // IResponse
@@ -75,7 +88,7 @@ message ObjectLockRequest // IRequest
 	int32 RpcId = 1;
 	int32 Type = 2;
 	int64 Key = 3;
-	ActorId ActorId = 4;
+	ProtoActorId ActorId = 4;
 	int32 Time = 5;
 }
 message ObjectLockResponse // IResponse
@@ -91,8 +104,8 @@ message ObjectUnLockRequest // IRequest
 	int32 RpcId = 1;
 	int32 Type = 2;
 	int64 Key = 3;
-	ActorId OldActorId = 4;
-	ActorId NewActorId = 5;
+	ProtoActorId OldActorId = 4;
+	ProtoActorId NewActorId = 5;
 }
 message ObjectUnLockResponse // IResponse
 {
@@ -128,7 +141,7 @@ message ObjectGetResponse // IResponse
 	int32 Error = 2;
 	string Message = 3;
 	int32 Type = 4;
-	ActorId ActorId = 5;
+	ProtoActorId ActorId = 5;
 }
 
 // ResponseType G2R_GetLoginKey
@@ -164,7 +177,7 @@ message ObjectQueryResponse // IResponse
 message M2M_UnitTransferRequest // IRequest
 {
 	int32 RpcId = 1;
-	ActorId OldActorId = 2;
+	ProtoActorId OldActorId = 2;
 	bytes Unit = 3;
 	repeated bytes Entitys = 4;
 }
