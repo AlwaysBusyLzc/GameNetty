@@ -43,6 +43,8 @@
             <Link>Generate\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
         
+        <Compile Remove="Model\**" />
+        
     </ItemGroup> 
     <ItemGroup> 
         <ProjectReference Include="..\..\Share\Analyzer\Share.Analyzer.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
@@ -53,6 +55,11 @@
     <ItemGroup>
       <Folder Include="Demo\" />
       <Folder Include="Generate\" />
-      <Folder Include="Model\" />
+    </ItemGroup> 
+    <ItemGroup>
+      <EmbeddedResource Remove="Model\**" />
+    </ItemGroup> 
+    <ItemGroup>
+      <None Remove="Model\**" />
     </ItemGroup> 
 </Project>
