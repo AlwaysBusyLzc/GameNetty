@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Net.Sockets;
 
 namespace ET
@@ -10,7 +11,19 @@ namespace ET
         [EntitySystem]
         private static void Awake(this NetComponent self, IPEndPoint address, NetworkProtocol protocol)
         {
-            self.AService = new KService(address, protocol, ServiceType.Outer);
+            if (protocol == NetworkProtocol.TCP)
+            {
+                self.AService = new TService(address, ServiceType.Outer);
+            }
+            else if (protocol == NetworkProtocol.UDP || protocol == NetworkProtocol.KCP)
+            {
+                self.AService = new KService(address, protocol, ServiceType.Outer);
+            }
+            else
+            {
+                throw new Exception($"NetComponent protocol error : {protocol}");
+            }
+
             self.AService.AcceptCallback = self.OnAccept;
             self.AService.ReadCallback = self.OnRead;
             self.AService.ErrorCallback = self.OnError;
@@ -19,7 +32,19 @@ namespace ET
         [EntitySystem]
         private static void Awake(this NetComponent self, AddressFamily addressFamily, NetworkProtocol protocol)
         {
-            self.AService = new KService(addressFamily, protocol, ServiceType.Outer);
+            if (protocol == NetworkProtocol.TCP)
+            {
+                self.AService = new TService(addressFamily, ServiceType.Outer);
+            }
+            else if (protocol == NetworkProtocol.UDP || protocol == NetworkProtocol.KCP)
+            {
+                self.AService = new KService(addressFamily, protocol, ServiceType.Outer);
+            }
+            else
+            {
+                throw new Exception($"NetComponent protocol error : {protocol}");
+            }
+
             self.AService.ReadCallback = self.OnRead;
             self.AService.ErrorCallback = self.OnError;
         }
