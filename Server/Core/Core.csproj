@@ -36,6 +36,9 @@
             <Link>Core\%(RecursiveDir)%(FileName)%(Extension)</Link>
         </Compile>
         <Compile Remove="Core\**" />
+        <Compile Remove="Module\Fiber\**" />
+        <Compile Remove="Module\Actor\**" />
+        <Compile Remove="Fiber\Module\**" />
     </ItemGroup>
     
     <ItemGroup>
@@ -46,10 +49,16 @@
     
     <ItemGroup>
       <EmbeddedResource Remove="Core\**" />
+      <EmbeddedResource Remove="Module\Fiber\**" />
+      <EmbeddedResource Remove="Module\Actor\**" />
+      <EmbeddedResource Remove="Fiber\Module\**" />
     </ItemGroup>
     
     <ItemGroup>
       <None Remove="Core\**" />
+      <None Remove="Module\Fiber\**" />
+      <None Remove="Module\Actor\**" />
+      <None Remove="Fiber\Module\**" />
     </ItemGroup>
 
 </Project>

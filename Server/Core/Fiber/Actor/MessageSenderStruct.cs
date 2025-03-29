@@ -3,7 +3,7 @@ using System.IO;
 
 namespace ET
 {
-    // 知道对方的instanceId，使用这个类发actor消息
+    // 知道对方的 ActorId，使用这个类发actor消息
     public readonly struct MessageSenderStruct
     {
         public ActorId ActorId { get; }
