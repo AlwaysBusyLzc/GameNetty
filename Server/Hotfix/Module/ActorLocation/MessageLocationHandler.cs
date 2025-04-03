@@ -8,7 +8,6 @@ namespace ET.Server
 
         public async ETTask Handle(Entity entity, Address fromAddress, MessageObject actorMessage)
         {
-            Fiber fiber = entity.Fiber();
             if (actorMessage is not Message message)
             {
                 Log.Error($"消息类型转换错误: {actorMessage.GetType().FullName} to {typeof (Message).Name}");
@@ -21,9 +20,10 @@ namespace ET.Server
                 return;
             }
             
-            MessageResponse response = ObjectPool.Instance.Fetch<MessageResponse>();
-            response.RpcId = message.RpcId;
-            fiber.Root.GetComponent<ProcessInnerSender>().Reply(fromAddress, response);
+            // MessageResponse response = ObjectPool.Instance.Fetch<MessageResponse>();
+            // response.RpcId = message.RpcId;
+            // Fiber fiber = entity.Fiber();
+            // fiber.Root.GetComponent<ProcessInnerSender>().Reply(fromAddress, response);
 
             await this.Run(e, message);
         }
@@ -35,7 +35,8 @@ namespace ET.Server
 
         public Type GetResponseType()
         {
-            return typeof (MessageResponse);
+            // return typeof (MessageResponse);
+            return null;
         }
     }
     

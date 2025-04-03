@@ -36,16 +36,19 @@ namespace ET
                 // 检查request response
                 if (typeof (IRequest).IsAssignableFrom(type))
                 {
-                    if (typeof (ILocationMessage).IsAssignableFrom(type))
-                    {
-                        this.requestResponse.Add(type, typeof (MessageResponse));
-                        continue;
-                    }
+                    // if (typeof (ILocationMessage).IsAssignableFrom(type))
+                    // {
+                    //     this.requestResponse.Add(type, typeof (MessageResponse));
+                    //     continue;
+                    // }
 
                     var attrs = type.GetCustomAttributes(typeof (ResponseTypeAttribute), false);
                     if (attrs.Length == 0)
                     {
-                        Log.Error($"not found responseType: {type}");
+                        if (!typeof (ILocationMessage).IsAssignableFrom(type))
+                        {
+                            Log.Error($"not found responseType: {type}");   
+                        }
                         continue;
                     }
 

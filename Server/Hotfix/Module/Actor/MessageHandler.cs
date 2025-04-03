@@ -8,7 +8,7 @@ namespace ET
 
         public async ETTask Handle(Entity entity, Address fromAddress, MessageObject actorMessage)
         {
-            if (actorMessage is not Message msg)
+            if (actorMessage is not Message message)
             {
                 Log.Error($"消息类型转换错误: {actorMessage.GetType().FullName} to {typeof (Message).Name}");
                 return;
@@ -16,19 +16,19 @@ namespace ET
 
             if (entity is not E e)
             {
-                Log.Error($"Actor类型转换错误: {entity.GetType().FullName} to {typeof (E).Name} --{typeof (Message).FullName}");
+                Log.Error($"Actor类型转换错误: {entity.GetType().FullName} to {typeof (E).FullName} --{typeof (Message).FullName}");
                 return;
             }
 
-            await this.Run(e, msg);
+            await this.Run(e, message);
         }
 
         public Type GetRequestType()
         {
-            if (typeof (ILocationMessage).IsAssignableFrom(typeof (Message)))
-            {
-                Log.Error($"message is IActorLocationMessage but handler is AMActorHandler: {typeof (Message)}");
-            }
+            // if (typeof (ILocationMessage).IsAssignableFrom(typeof (Message)))
+            // {
+            //     Log.Error($"message is IActorLocationMessage but handler is AMActorHandler: {typeof (Message)}");
+            // }
 
             return typeof (Message);
         }
@@ -78,7 +78,14 @@ namespace ET
                 }
                 
                 response.RpcId = rpcId;
-                fiber.Root.GetComponent<ProcessInnerSender>().Reply(fromAddress, response);
+                
+                // 这里是为了保证response消息在handler消息处理完成之后发出，
+                // 因为MessageLocationSenderComponentSystem里面的Send方法有可能需要从location获取actorid
+                // 这样会导致send实际上进入了新的协程，从而response却先发送出去了
+                using (await fiber.Root.GetComponent<CoroutineLockComponent>().Wait(CoroutineLockType.MessageLocationSender, entity.Id))
+                {
+                    fiber.Root.GetComponent<ProcessInnerSender>().Reply(fromAddress, response);
+                }
             }
             catch (Exception e)
             {
@@ -88,10 +95,10 @@ namespace ET
 
         public Type GetRequestType()
         {
-            if (typeof (ILocationRequest).IsAssignableFrom(typeof (Request)))
-            {
-                Log.Error($"message is IActorLocationMessage but handler is AMActorRpcHandler: {typeof (Request)}");
-            }
+            // if (typeof (ILocationRequest).IsAssignableFrom(typeof (Request)))
+            // {
+            //     Log.Error($"message is IActorLocationMessage but handler is AMActorRpcHandler: {typeof (Request)}");
+            // }
 
             return typeof (Request);
         }
