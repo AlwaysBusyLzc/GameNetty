@@ -66,7 +66,6 @@ namespace ET.Server
 
             switch (message)
             {
-                case ILocationRequest:
                 case IRequest:
                 {
                     CallInner().Coroutine();

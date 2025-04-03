@@ -45,10 +45,10 @@ namespace ET
                     var attrs = type.GetCustomAttributes(typeof (ResponseTypeAttribute), false);
                     if (attrs.Length == 0)
                     {
-                        if (!typeof (ILocationMessage).IsAssignableFrom(type))
-                        {
+                        // if (!typeof (ILocationMessage).IsAssignableFrom(type))
+                        // {
                             Log.Error($"not found responseType: {type}");   
-                        }
+                        // }
                         continue;
                     }
 
