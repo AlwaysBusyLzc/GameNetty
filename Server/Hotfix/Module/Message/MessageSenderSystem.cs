@@ -5,6 +5,11 @@ using System.Net;
 
 namespace ET.Server
 {
+
+    /** 处理服务器集群内消息发送
+     * 如果要发送的 actor 在本进程， 调用 ProcessInnerSender 直接发送给目标 actor
+     * 如果要发送的 actor 在其它进程， 调用 ProcessInnerSender 发送给 NetInner acotr, 再由它发给目标进程
+     */
     [FriendOf(typeof(MessageSender))]
     public static partial class MessageSenderSystem
     {
