@@ -3,15 +3,16 @@
     // 不需要返回消息
     public interface IMessage
     {
-    }
-
-    public interface IRequest: IMessage
-    {
         int RpcId
         {
             get;
             set;
         }
+    }
+
+    public interface IRequest: IMessage
+    {
+
     }
 
     public interface IResponse: IMessage
@@ -23,12 +24,6 @@
         }
 
         string Message
-        {
-            get;
-            set;
-        }
-
-        int RpcId
         {
             get;
             set;

@@ -194,7 +194,7 @@ namespace ET.Server
             return ++self.RpcId;
         }
 
-        public static async ETTask<IResponse> Call(this ProcessOuterSender self, ActorId actorId, IRequest iRequest, bool needException = true)
+        public static async ETTask<IResponse> Call(this ProcessOuterSender self, ActorId actorId, IMessage iRequest, bool needException = true)
         {
             if (actorId == default)
             {

@@ -16,7 +16,7 @@ namespace ET.Server
             ObjectAddRequest objectAddRequest = ObjectAddRequest.Create();
             objectAddRequest.Type = type;
             objectAddRequest.Key = key;
-            objectAddRequest.ActorId = actorId;
+            objectAddRequest.ActorId = actorId.ToProto();
             await fiber.Root.GetComponent<MessageSender>().Call(GetLocationSceneId(key), objectAddRequest);
         }
 

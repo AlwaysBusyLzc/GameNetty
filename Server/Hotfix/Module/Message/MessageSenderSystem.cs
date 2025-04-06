@@ -29,6 +29,7 @@ namespace ET.Server
             a2NetInnerMessage.ActorId = actorId;
             a2NetInnerMessage.MessageObject = message;
 
+            // 投递给 NetInner 纤程专属的消息队列了
             MessageQueue.Instance.Send(new ActorId(fiber.Process, ConstFiberId.NetInner), a2NetInnerMessage);
         }
 
@@ -40,7 +41,7 @@ namespace ET.Server
         public static async ETTask<IResponse> Call(
                 this MessageSender self,
                 ActorId actorId,
-                IRequest request,
+                IMessage request,
                 bool needException = true
         )
         {

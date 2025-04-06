@@ -21,7 +21,7 @@ namespace ET.Server
             long unitId = unit.Id;
             
             M2M_UnitTransferRequest request = M2M_UnitTransferRequest.Create();
-            request.OldActorId = unit.GetActorId();
+            request.OldActorId = unit.GetActorId().ToProto();
             request.Unit = unit.ToBson();
             foreach (Entity entity in unit.Components.Values)
             {
@@ -32,7 +32,7 @@ namespace ET.Server
             }
             unit.Dispose();
             
-            await root.GetComponent<LocationProxyComponent>().Lock(LocationType.Unit, unitId, request.OldActorId);
+            await root.GetComponent<LocationProxyComponent>().Lock(LocationType.Unit, unitId, request.OldActorId.ToActorId());
             await root.GetComponent<MessageSender>().Call(sceneInstanceId, request);
         }
     }

@@ -39,10 +39,9 @@ namespace ET
             
             ObjectPool.Instance.Recycle(this);
         }
-        
-        public int RpcId { get; set; }
+
         public ActorId ActorId;
-        public IRequest MessageObject;
+        public IMessage MessageObject;
     }
     
     [Message(3)]
@@ -64,7 +63,6 @@ namespace ET
         
         public int Error { get; set; }
         public string Message { get; set; }
-        public int RpcId { get; set; }
         
         public IResponse MessageObject;
 

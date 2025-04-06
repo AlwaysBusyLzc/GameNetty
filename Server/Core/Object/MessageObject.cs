@@ -7,11 +7,14 @@ namespace ET
     [DisableNew]
     public abstract class MessageObject: ProtoObject, IMessage, IDisposable, IPool
     {
+
         public virtual void Dispose()
         {
         }
 
         [BsonIgnore]
         public bool IsFromPool { get; set; }
+
+        public int RpcId { get; set; }
     }
 }

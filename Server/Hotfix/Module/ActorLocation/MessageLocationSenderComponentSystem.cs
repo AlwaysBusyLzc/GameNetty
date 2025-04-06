@@ -171,10 +171,10 @@ namespace ET.Server
 
         private static void SendWithRetry(this MessageLocationSenderOneType self, long entityId, IMessage message)
         {
-            self.CallWithRetry(entityId, message as IRequest).Coroutine();
+            self.CallWithRetry(entityId, message).Coroutine();
         }
         
-        private static async ETTask<IResponse> CallWithRetry(this MessageLocationSenderOneType self, long entityId, IRequest iRequest)
+        private static async ETTask<IResponse> CallWithRetry(this MessageLocationSenderOneType self, long entityId, IMessage iRequest)
         {
             MessageLocationSender messageLocationSender = self.GetOrCreate(entityId);
 
@@ -205,7 +205,7 @@ namespace ET.Server
             }
         }
 
-        private static async ETTask<IResponse> CallInner(this MessageLocationSenderOneType self, MessageLocationSender messageLocationSender, IRequest iRequest)
+        private static async ETTask<IResponse> CallInner(this MessageLocationSenderOneType self, MessageLocationSender messageLocationSender, IMessage iRequest)
         {
             int failTimes = 0;
             long instanceId = messageLocationSender.InstanceId;

@@ -29,6 +29,7 @@ namespace ET
         
         public bool Send(Address fromAddress, ActorId actorId, MessageObject messageObject)
         {
+            // 找到目的 actorId fiber 专属的消息队列
             if (!this.messages.TryGetValue(actorId.Address.Fiber, out var queue))
             {
                 return false;

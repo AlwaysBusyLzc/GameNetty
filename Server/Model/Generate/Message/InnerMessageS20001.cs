@@ -3649,7 +3649,7 @@ namespace ET {
   /// ResponseType ObjectUnLockResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ObjectUnLockRequest : pb::IMessage<ObjectUnLockRequest>
+  public sealed partial class ObjectUnLockRequest : MessageObject, pb::IMessage<ObjectUnLockRequest>, IRequest
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -4013,7 +4013,7 @@ namespace ET {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ObjectUnLockResponse : pb::IMessage<ObjectUnLockResponse>
+  public sealed partial class ObjectUnLockResponse :MessageObject, pb::IMessage<ObjectUnLockResponse>, IResponse
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -4835,7 +4835,7 @@ namespace ET {
   /// ResponseType ObjectGetResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ObjectGetRequest : pb::IMessage<ObjectGetRequest>
+  public sealed partial class ObjectGetRequest : MessageObject, pb::IMessage<ObjectGetRequest>, IRequest
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -5107,7 +5107,7 @@ namespace ET {
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class ObjectGetResponse : pb::IMessage<ObjectGetResponse>
+  public sealed partial class ObjectGetResponse : MessageObject, pb::IMessage<ObjectGetResponse>, IResponse
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

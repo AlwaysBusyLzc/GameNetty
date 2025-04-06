@@ -20,6 +20,11 @@ namespace ET
                 return;
             }
 
+            MessageResponse response = ObjectPool.Instance.Fetch<MessageResponse>();
+            response.RpcId = message.RpcId;
+            Fiber fiber = entity.Fiber();
+            fiber.Root.GetComponent<ProcessInnerSender>().Reply(fromAddress, response);
+
             await this.Run(e, message);
         }
 
