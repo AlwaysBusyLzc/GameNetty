@@ -13,31 +13,31 @@ namespace ET {
 
 public static class InnerMessage
 {
- public const ushort ProtoAddress = 20001;
- public const ushort ProtoActorId = 20001;
- public const ushort ObjectQueryRequest = 20001;
- public const ushort M2A_Reload = 20001;
- public const ushort A2M_Reload = 20001;
- public const ushort G2G_LockRequest = 20001;
- public const ushort G2G_LockResponse = 20001;
- public const ushort G2G_LockReleaseRequest = 20001;
- public const ushort G2G_LockReleaseResponse = 20001;
- public const ushort ObjectAddRequest = 20001;
- public const ushort ObjectAddResponse = 20001;
- public const ushort ObjectLockRequest = 20001;
- public const ushort ObjectLockResponse = 20001;
- public const ushort ObjectUnLockRequest = 20001;
- public const ushort ObjectUnLockResponse = 20001;
- public const ushort ObjectRemoveRequest = 20001;
- public const ushort ObjectRemoveResponse = 20001;
- public const ushort ObjectGetRequest = 20001;
- public const ushort ObjectGetResponse = 20001;
- public const ushort R2G_GetLoginKey = 20001;
- public const ushort G2R_GetLoginKey = 20001;
- public const ushort G2M_SessionDisconnect = 20001;
- public const ushort ObjectQueryResponse = 20001;
- public const ushort M2M_UnitTransferRequest = 20001;
- public const ushort M2M_UnitTransferResponse = 20001;
+ public const ushort ProtoAddress = 20002;
+ public const ushort ProtoActorId = 20003;
+ public const ushort ObjectQueryRequest = 20004;
+ public const ushort M2A_Reload = 20005;
+ public const ushort A2M_Reload = 20006;
+ public const ushort G2G_LockRequest = 20007;
+ public const ushort G2G_LockResponse = 20008;
+ public const ushort G2G_LockReleaseRequest = 20009;
+ public const ushort G2G_LockReleaseResponse = 20010;
+ public const ushort ObjectAddRequest = 20011;
+ public const ushort ObjectAddResponse = 20012;
+ public const ushort ObjectLockRequest = 20013;
+ public const ushort ObjectLockResponse = 20014;
+ public const ushort ObjectUnLockRequest = 20015;
+ public const ushort ObjectUnLockResponse = 20016;
+ public const ushort ObjectRemoveRequest = 20017;
+ public const ushort ObjectRemoveResponse = 20018;
+ public const ushort ObjectGetRequest = 20019;
+ public const ushort ObjectGetResponse = 20020;
+ public const ushort R2G_GetLoginKey = 20021;
+ public const ushort G2R_GetLoginKey = 20022;
+ public const ushort G2M_SessionDisconnect = 20023;
+ public const ushort ObjectQueryResponse = 20024;
+ public const ushort M2M_UnitTransferRequest = 20025;
+ public const ushort M2M_UnitTransferResponse = 20026;
 
 }
 
@@ -132,7 +132,7 @@ public static class InnerMessage
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ProtoAddress)]
 public sealed partial class ProtoAddress : MessageObject, IMessage, pb::IMessage<ProtoAddress>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -368,7 +368,7 @@ public sealed partial class ProtoAddress : MessageObject, IMessage, pb::IMessage
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ProtoActorId)]
 public sealed partial class ProtoActorId : MessageObject, IMessage, pb::IMessage<ProtoActorId>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -616,7 +616,7 @@ public sealed partial class ProtoActorId : MessageObject, IMessage, pb::IMessage
   /// ResponseType ObjectQueryResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectQueryRequest)]
 public sealed partial class ObjectQueryRequest : MessageObject, IMessage, pb::IMessage<ObjectQueryRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -892,7 +892,7 @@ public sealed partial class ObjectQueryRequest : MessageObject, IMessage, pb::IM
   /// ResponseType A2M_Reload
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.M2A_Reload)]
 public sealed partial class M2A_Reload : MessageObject, IMessage, pb::IMessage<M2A_Reload>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1091,7 +1091,7 @@ public sealed partial class M2A_Reload : MessageObject, IMessage, pb::IMessage<M
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.A2M_Reload)]
 public sealed partial class A2M_Reload : MessageObject, IMessage, pb::IMessage<A2M_Reload>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1367,7 +1367,7 @@ public sealed partial class A2M_Reload : MessageObject, IMessage, pb::IMessage<A
   /// ResponseType G2G_LockResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.G2G_LockRequest)]
 public sealed partial class G2G_LockRequest : MessageObject, IMessage, pb::IMessage<G2G_LockRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1640,7 +1640,7 @@ public sealed partial class G2G_LockRequest : MessageObject, IMessage, pb::IMess
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.G2G_LockResponse)]
 public sealed partial class G2G_LockResponse : MessageObject, IMessage, pb::IMessage<G2G_LockResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1916,7 +1916,7 @@ public sealed partial class G2G_LockResponse : MessageObject, IMessage, pb::IMes
   /// ResponseType G2G_LockReleaseResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.G2G_LockReleaseRequest)]
 public sealed partial class G2G_LockReleaseRequest : MessageObject, IMessage, pb::IMessage<G2G_LockReleaseRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2189,7 +2189,7 @@ public sealed partial class G2G_LockReleaseRequest : MessageObject, IMessage, pb
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.G2G_LockReleaseResponse)]
 public sealed partial class G2G_LockReleaseResponse : MessageObject, IMessage, pb::IMessage<G2G_LockReleaseResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2465,7 +2465,7 @@ public sealed partial class G2G_LockReleaseResponse : MessageObject, IMessage, p
   /// ResponseType ObjectAddResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectAddRequest)]
 public sealed partial class ObjectAddRequest : MessageObject, IMessage, pb::IMessage<ObjectAddRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -2784,7 +2784,7 @@ public sealed partial class ObjectAddRequest : MessageObject, IMessage, pb::IMes
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectAddResponse)]
 public sealed partial class ObjectAddResponse : MessageObject, IMessage, pb::IMessage<ObjectAddResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3060,7 +3060,7 @@ public sealed partial class ObjectAddResponse : MessageObject, IMessage, pb::IMe
   /// ResponseType ObjectLockResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectLockRequest)]
 public sealed partial class ObjectLockRequest : MessageObject, IMessage, pb::IMessage<ObjectLockRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3416,7 +3416,7 @@ public sealed partial class ObjectLockRequest : MessageObject, IMessage, pb::IMe
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectLockResponse)]
 public sealed partial class ObjectLockResponse : MessageObject, IMessage, pb::IMessage<ObjectLockResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -3692,7 +3692,7 @@ public sealed partial class ObjectLockResponse : MessageObject, IMessage, pb::IM
   /// ResponseType ObjectUnLockResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectUnLockRequest)]
 public sealed partial class ObjectUnLockRequest : MessageObject, IMessage, pb::IMessage<ObjectUnLockRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4057,7 +4057,7 @@ public sealed partial class ObjectUnLockRequest : MessageObject, IMessage, pb::I
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectUnLockResponse)]
 public sealed partial class ObjectUnLockResponse : MessageObject, IMessage, pb::IMessage<ObjectUnLockResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4333,7 +4333,7 @@ public sealed partial class ObjectUnLockResponse : MessageObject, IMessage, pb::
   /// ResponseType ObjectRemoveResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectRemoveRequest)]
 public sealed partial class ObjectRemoveRequest : MessageObject, IMessage, pb::IMessage<ObjectRemoveRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4606,7 +4606,7 @@ public sealed partial class ObjectRemoveRequest : MessageObject, IMessage, pb::I
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectRemoveResponse)]
 public sealed partial class ObjectRemoveResponse : MessageObject, IMessage, pb::IMessage<ObjectRemoveResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -4882,7 +4882,7 @@ public sealed partial class ObjectRemoveResponse : MessageObject, IMessage, pb::
   /// ResponseType ObjectGetResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectGetRequest)]
 public sealed partial class ObjectGetRequest : MessageObject, IMessage, pb::IMessage<ObjectGetRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5155,7 +5155,7 @@ public sealed partial class ObjectGetRequest : MessageObject, IMessage, pb::IMes
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectGetResponse)]
 public sealed partial class ObjectGetResponse : MessageObject, IMessage, pb::IMessage<ObjectGetResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5514,7 +5514,7 @@ public sealed partial class ObjectGetResponse : MessageObject, IMessage, pb::IMe
   /// ResponseType G2R_GetLoginKey
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.R2G_GetLoginKey)]
 public sealed partial class R2G_GetLoginKey : MessageObject, IMessage, pb::IMessage<R2G_GetLoginKey>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -5750,7 +5750,7 @@ public sealed partial class R2G_GetLoginKey : MessageObject, IMessage, pb::IMess
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.G2R_GetLoginKey)]
 public sealed partial class G2R_GetLoginKey : MessageObject, IMessage, pb::IMessage<G2R_GetLoginKey>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6097,7 +6097,7 @@ public sealed partial class G2R_GetLoginKey : MessageObject, IMessage, pb::IMess
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.G2M_SessionDisconnect)]
 public sealed partial class G2M_SessionDisconnect : MessageObject, IMessage, pb::IMessage<G2M_SessionDisconnect>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6296,7 +6296,7 @@ public sealed partial class G2M_SessionDisconnect : MessageObject, IMessage, pb:
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.ObjectQueryResponse)]
 public sealed partial class ObjectQueryResponse : MessageObject, IMessage, pb::IMessage<ObjectQueryResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6609,7 +6609,7 @@ public sealed partial class ObjectQueryResponse : MessageObject, IMessage, pb::I
   /// ResponseType M2M_UnitTransferResponse
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.M2M_UnitTransferRequest)]
 public sealed partial class M2M_UnitTransferRequest : MessageObject, IMessage, pb::IMessage<M2M_UnitTransferRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -6917,7 +6917,7 @@ public sealed partial class M2M_UnitTransferRequest : MessageObject, IMessage, p
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(InnerMessage.class_name)]
+[Message(InnerMessage.M2M_UnitTransferResponse)]
 public sealed partial class M2M_UnitTransferResponse : MessageObject, IMessage, pb::IMessage<M2M_UnitTransferResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage

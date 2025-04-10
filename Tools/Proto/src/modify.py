@@ -1,6 +1,5 @@
 import os
 import re
-from turtledemo.penrose import start
 
 import config
 
