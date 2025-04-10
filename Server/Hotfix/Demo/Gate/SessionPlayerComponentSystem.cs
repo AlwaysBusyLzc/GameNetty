@@ -12,7 +12,8 @@
                 return;
             }
             // 发送断线消息
-            root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Send(self.Player.Id, G2M_SessionDisconnect.Create());
+            G2M_SessionDisconnect msg = new G2M_SessionDisconnect();
+            root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Send(self.Player.Id, msg);
         }
         
         [EntitySystem]

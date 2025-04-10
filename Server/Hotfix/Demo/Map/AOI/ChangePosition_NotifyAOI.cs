@@ -9,10 +9,10 @@ namespace ET.Server
         {
             Unit unit = args.Unit;
             float3 oldPos = args.OldPos;
-            int oldCellX = (int) (oldPos.X * 1000) / AOIManagerComponent.CellSize;
-            int oldCellY = (int) (oldPos.Z * 1000) / AOIManagerComponent.CellSize;
-            int newCellX = (int) (unit.Position.X * 1000) / AOIManagerComponent.CellSize;
-            int newCellY = (int) (unit.Position.Z * 1000) / AOIManagerComponent.CellSize;
+            int oldCellX = (int) (oldPos.x * 1000) / AOIManagerComponent.CellSize;
+            int oldCellY = (int) (oldPos.z * 1000) / AOIManagerComponent.CellSize;
+            int newCellX = (int) (unit.Position.x * 1000) / AOIManagerComponent.CellSize;
+            int newCellY = (int) (unit.Position.z * 1000) / AOIManagerComponent.CellSize;
             if (oldCellX == newCellX && oldCellY == newCellY)
             {
                 return;

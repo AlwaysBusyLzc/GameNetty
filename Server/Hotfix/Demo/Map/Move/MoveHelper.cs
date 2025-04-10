@@ -47,7 +47,7 @@ namespace ET.Server
         // error: 0表示协程走完正常停止
         public static void SendStop(this Unit unit, int error)
         {
-            M2C_Stop m2CStop = M2C_Stop.Create();
+            M2C_Stop m2CStop = new();
             m2CStop.Error = error;
             m2CStop.Id = unit.Id;
             m2CStop.Position = unit.Position;

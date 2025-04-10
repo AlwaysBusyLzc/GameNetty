@@ -9,14 +9,14 @@ namespace ET.Server
         protected override async ETTask Run(Scene scene, M2M_UnitTransferRequest request, M2M_UnitTransferResponse response)
         {
             UnitComponent unitComponent = scene.GetComponent<UnitComponent>();
-            Unit unit = MongoHelper.Deserialize<Unit>(request.Unit);
+            Unit unit = MongoHelper.Deserialize<Unit>(request.Unit.ToByteArray());
 
             unitComponent.AddChild(unit);
             unitComponent.Add(unit);
 
-            foreach (byte[] bytes in request.Entitys)
+            foreach (var ent in request.Entitys)
             {
-                Entity entity = MongoHelper.Deserialize<Entity>(bytes);
+                Entity entity = MongoHelper.Deserialize<Entity>(ent.ToByteArray());
                 unit.AddComponent(entity);
             }
 
@@ -27,13 +27,13 @@ namespace ET.Server
             unit.AddComponent<MailBoxComponent, MailBoxType>(MailBoxType.OrderedMessage);
 
             // 通知客户端开始切场景
-            M2C_StartSceneChange m2CStartSceneChange = M2C_StartSceneChange.Create();
+            M2C_StartSceneChange m2CStartSceneChange = new();
             m2CStartSceneChange.SceneInstanceId = scene.InstanceId;
             m2CStartSceneChange.SceneName = scene.Name;
             MapMessageHelper.SendToClient(unit, m2CStartSceneChange);
 
             // 通知客户端创建My Unit
-            M2C_CreateMyUnit m2CCreateUnits = M2C_CreateMyUnit.Create();
+            M2C_CreateMyUnit m2CCreateUnits = new();
             m2CCreateUnits.Unit = UnitHelper.CreateUnitInfo(unit);
             MapMessageHelper.SendToClient(unit, m2CCreateUnits);
 
@@ -41,7 +41,7 @@ namespace ET.Server
             unit.AddComponent<AOIEntity, int, float3>(9 * 1000, unit.Position);
 
             // 解锁location，可以接收发给Unit的消息
-            await scene.Root().GetComponent<LocationProxyComponent>().UnLock(LocationType.Unit, unit.Id, request.OldActorId, unit.GetActorId());
+            await scene.Root().GetComponent<LocationProxyComponent>().UnLock(LocationType.Unit, unit.Id, request.OldActorId.ToActorId(), unit.GetActorId());
         }
     }
 }

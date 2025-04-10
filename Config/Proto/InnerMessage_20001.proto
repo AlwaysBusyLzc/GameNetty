@@ -23,6 +23,14 @@ message ObjectQueryRequest // req
 	int64 InstanceId = 3;
 }
 
+message ObjectQueryResponse // res
+{
+	int32 RpcId = 1;
+	int32 Error = 2;
+	string Message = 3;
+	bytes Entity = 4;
+}
+
 // res A2M_Reload
 message M2A_Reload // req
 {
@@ -160,17 +168,9 @@ message G2R_GetLoginKey // res
 	int64 GateId = 5;
 }
 
-message G2M_SessionDisconnect // msg
+message G2M_SessionDisconnect // req
 {
 	int32 RpcId = 1;
-}
-
-message ObjectQueryResponse // res
-{
-	int32 RpcId = 1;
-	int32 Error = 2;
-	string Message = 3;
-	bytes Entity = 4;
 }
 
 // res M2M_UnitTransferResponse

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Google.Protobuf;
 using MongoDB.Bson;
 
 namespace ET.Server
@@ -20,14 +21,14 @@ namespace ET.Server
             // location加锁
             long unitId = unit.Id;
             
-            M2M_UnitTransferRequest request = M2M_UnitTransferRequest.Create();
+            M2M_UnitTransferRequest request = new();
             request.OldActorId = unit.GetActorId().ToProto();
-            request.Unit = unit.ToBson();
+            request.Unit = ByteString.CopyFrom(unit.ToBson());
             foreach (Entity entity in unit.Components.Values)
             {
                 if (entity is ITransfer)
                 {
-                    request.Entitys.Add(entity.ToBson());
+                    request.Entitys.Add(ByteString.CopyFrom(entity.ToBson()));
                 }
             }
             unit.Dispose();

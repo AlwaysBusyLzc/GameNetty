@@ -1,14 +1,14 @@
 syntax = "proto3";
 package ET;
 
-message float3
+message ProtoFloat3
 {
 	float x = 1;
 	float y = 2;
 	float z = 3;
 }
 
-message quaternion
+message ProtoQuaternion
 {
 	float x = 1;
 	float y = 2;
@@ -55,8 +55,8 @@ message G2C_EnterMap // res
 
 message MoveInfo
 {
-	repeated float3 Points = 1;
-	quaternion Rotation = 2;
+	repeated ProtoFloat3 Points = 1;
+	ProtoQuaternion Rotation = 2;
 	int32 TurnSpeed = 3;
 }
 
@@ -65,8 +65,8 @@ message UnitInfo
 	int64 UnitId = 1;
 	int32 ConfigId = 2;
 	int32 Type = 3;
-	float3 Position = 4;
-	float3 Forward = 5;
+	ProtoFloat3 Position = 4;
+	ProtoFloat3 Forward = 5;
 	map<int32, int64> KV = 6;
 	MoveInfo MoveInfo = 7;
 }
@@ -92,13 +92,13 @@ message M2C_RemoveUnits // msg
 	repeated int64 Units = 1;
 }
 
-message C2M_PathfindingResult // msg
+message C2M_PathfindingResult // req
 {
 	int32 RpcId = 1;
-	float3 Position = 2;
+	ProtoFloat3 Position = 2;
 }
 
-message C2M_Stop // msg
+message C2M_Stop // req
 {
 	int32 RpcId = 1;
 }
@@ -106,16 +106,16 @@ message C2M_Stop // msg
 message M2C_PathfindingResult // msg
 {
 	int64 Id = 1;
-	float3 Position = 2;
-	repeated float3 Points = 3;
+	ProtoFloat3 Position = 2;
+	repeated ProtoFloat3 Points = 3;
 }
 
 message M2C_Stop // msg
 {
 	int32 Error = 1;
 	int64 Id = 2;
-	float3 Position = 3;
-	quaternion Rotation = 4;
+	ProtoFloat3 Position = 3;
+	ProtoQuaternion Rotation = 4;
 }
 
 // res G2C_Ping
@@ -206,7 +206,7 @@ message M2C_TestRobotCase // res
 	int32 N = 4;
 }
 
-message C2M_TestRobotCase2 // msg
+message C2M_TestRobotCase2 // req
 {
 	int32 RpcId = 1;
 	int32 N = 2;

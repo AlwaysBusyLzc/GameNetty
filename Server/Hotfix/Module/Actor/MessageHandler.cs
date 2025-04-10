@@ -19,12 +19,7 @@ namespace ET
                 Log.Error($"Actor类型转换错误: {entity.GetType().FullName} to {typeof (E).FullName} --{typeof (Message).FullName}");
                 return;
             }
-
-            MessageResponse response = ObjectPool.Instance.Fetch<MessageResponse>();
-            response.RpcId = message.RpcId;
-            Fiber fiber = entity.Fiber();
-            fiber.Root.GetComponent<ProcessInnerSender>().Reply(fromAddress, response);
-
+            
             await this.Run(e, message);
         }
 

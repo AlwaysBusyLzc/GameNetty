@@ -41,7 +41,7 @@ namespace ET.Server
         public static async ETTask<IResponse> Call(
                 this MessageSender self,
                 ActorId actorId,
-                IMessage request,
+                IRequest request,
                 bool needException = true
         )
         {

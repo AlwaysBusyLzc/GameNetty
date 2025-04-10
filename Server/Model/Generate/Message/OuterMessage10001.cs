@@ -59,62 +59,63 @@ public static class OuterMessage
     static OuterMessage10001Reflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChhPdXRlck1lc3NhZ2VfMTAwMDEucHJvdG8SAkVUIikKBmZsb2F0MxIJCgF4",
-            "GAEgASgCEgkKAXkYAiABKAISCQoBehgDIAEoAiI4CgpxdWF0ZXJuaW9uEgkK",
-            "AXgYASABKAISCQoBeRgCIAEoAhIJCgF6GAMgASgCEgkKAXcYBCABKAIiMAoK",
-            "Um91dGVyU3luYxIRCglDb25uZWN0SWQYASABKA0SDwoHQWRkcmVzcxgCIAEo",
-            "CSIxCg9DMk1fVGVzdFJlcXVlc3QSDQoFUnBjSWQYASABKAUSDwoHcmVxdWVz",
-            "dBgCIAEoCSJTChBNMkNfVGVzdFJlc3BvbnNlEg0KBVJwY0lkGAEgASgFEg0K",
-            "BUVycm9yGAIgASgFEg8KB01lc3NhZ2UYAyABKAkSEAoIcmVzcG9uc2UYBCAB",
-            "KAkiHQoMQzJHX0VudGVyTWFwEg0KBVJwY0lkGAEgASgFIksKDEcyQ19FbnRl",
-            "ck1hcBINCgVScGNJZBgBIAEoBRINCgVFcnJvchgCIAEoBRIPCgdNZXNzYWdl",
-            "GAMgASgJEgwKBE15SWQYBCABKAMiWwoITW92ZUluZm8SGgoGUG9pbnRzGAEg",
-            "AygLMgouRVQuZmxvYXQzEiAKCFJvdGF0aW9uGAIgASgLMg4uRVQucXVhdGVy",
-            "bmlvbhIRCglUdXJuU3BlZWQYAyABKAUi4gEKCFVuaXRJbmZvEg4KBlVuaXRJ",
-            "ZBgBIAEoAxIQCghDb25maWdJZBgCIAEoBRIMCgRUeXBlGAMgASgFEhwKCFBv",
-            "c2l0aW9uGAQgASgLMgouRVQuZmxvYXQzEhsKB0ZvcndhcmQYBSABKAsyCi5F",
-            "VC5mbG9hdDMSIAoCS1YYBiADKAsyFC5FVC5Vbml0SW5mby5LVkVudHJ5Eh4K",
-            "CE1vdmVJbmZvGAcgASgLMgwuRVQuTW92ZUluZm8aKQoHS1ZFbnRyeRILCgNr",
-            "ZXkYASABKAUSDQoFdmFsdWUYAiABKAM6AjgBIi4KD00yQ19DcmVhdGVVbml0",
-            "cxIbCgVVbml0cxgBIAMoCzIMLkVULlVuaXRJbmZvIi4KEE0yQ19DcmVhdGVN",
-            "eVVuaXQSGgoEVW5pdBgBIAEoCzIMLkVULlVuaXRJbmZvIkIKFE0yQ19TdGFy",
-            "dFNjZW5lQ2hhbmdlEhcKD1NjZW5lSW5zdGFuY2VJZBgBIAEoAxIRCglTY2Vu",
-            "ZU5hbWUYAiABKAkiIAoPTTJDX1JlbW92ZVVuaXRzEg0KBVVuaXRzGAEgAygD",
-            "IkQKFUMyTV9QYXRoZmluZGluZ1Jlc3VsdBINCgVScGNJZBgBIAEoBRIcCghQ",
-            "b3NpdGlvbhgCIAEoCzIKLkVULmZsb2F0MyIZCghDMk1fU3RvcBINCgVScGNJ",
-            "ZBgBIAEoBSJdChVNMkNfUGF0aGZpbmRpbmdSZXN1bHQSCgoCSWQYASABKAMS",
-            "HAoIUG9zaXRpb24YAiABKAsyCi5FVC5mbG9hdDMSGgoGUG9pbnRzGAMgAygL",
-            "MgouRVQuZmxvYXQzImUKCE0yQ19TdG9wEg0KBUVycm9yGAEgASgFEgoKAklk",
-            "GAIgASgDEhwKCFBvc2l0aW9uGAMgASgLMgouRVQuZmxvYXQzEiAKCFJvdGF0",
-            "aW9uGAQgASgLMg4uRVQucXVhdGVybmlvbiIZCghDMkdfUGluZxINCgVScGNJ",
-            "ZBgBIAEoBSJHCghHMkNfUGluZxINCgVScGNJZBgBIAEoBRINCgVFcnJvchgC",
-            "IAEoBRIPCgdNZXNzYWdlGAMgASgJEgwKBFRpbWUYBCABKAMiCgoIRzJDX1Rl",
-            "c3QiPgoKQzJNX1JlbG9hZBINCgVScGNJZBgBIAEoBRIPCgdBY2NvdW50GAIg",
-            "ASgJEhAKCFBhc3N3b3JkGAMgASgJIjsKCk0yQ19SZWxvYWQSDQoFUnBjSWQY",
-            "ASABKAUSDQoFRXJyb3IYAiABKAUSDwoHTWVzc2FnZRgDIAEoCSI9CglDMlJf",
-            "TG9naW4SDQoFUnBjSWQYASABKAUSDwoHQWNjb3VudBgCIAEoCRIQCghQYXNz",
-            "d29yZBgDIAEoCSJoCglSMkNfTG9naW4SDQoFUnBjSWQYASABKAUSDQoFRXJy",
-            "b3IYAiABKAUSDwoHTWVzc2FnZRgDIAEoCRIPCgdBZGRyZXNzGAQgASgJEgsK",
-            "A0tleRgFIAEoAxIOCgZHYXRlSWQYBiABKAMiOwoNQzJHX0xvZ2luR2F0ZRIN",
-            "CgVScGNJZBgBIAEoBRILCgNLZXkYAiABKAMSDgoGR2F0ZUlkGAMgASgDIlAK",
-            "DUcyQ19Mb2dpbkdhdGUSDQoFUnBjSWQYASABKAUSDQoFRXJyb3IYAiABKAUS",
-            "DwoHTWVzc2FnZRgDIAEoCRIQCghQbGF5ZXJJZBgEIAEoAyIlChVHMkNfVGVz",
-            "dEhvdGZpeE1lc3NhZ2USDAoESW5mbxgBIAEoCSItChFDMk1fVGVzdFJvYm90",
-            "Q2FzZRINCgVScGNJZBgBIAEoBRIJCgFOGAIgASgFIk0KEU0yQ19UZXN0Um9i",
-            "b3RDYXNlEg0KBVJwY0lkGAEgASgFEg0KBUVycm9yGAIgASgFEg8KB01lc3Nh",
-            "Z2UYAyABKAkSCQoBThgEIAEoBSIuChJDMk1fVGVzdFJvYm90Q2FzZTISDQoF",
-            "UnBjSWQYASABKAUSCQoBThgCIAEoBSIuChJNMkNfVGVzdFJvYm90Q2FzZTIS",
-            "DQoFUnBjSWQYASABKAUSCQoBThgCIAEoBSIgCg9DMk1fVHJhbnNmZXJNYXAS",
-            "DQoFUnBjSWQYASABKAUiQAoPTTJDX1RyYW5zZmVyTWFwEg0KBVJwY0lkGAEg",
-            "ASgFEg0KBUVycm9yGAIgASgFEg8KB01lc3NhZ2UYAyABKAkiHgoNQzJHX0Jl",
-            "bmNobWFyaxINCgVScGNJZBgBIAEoBSI+Cg1HMkNfQmVuY2htYXJrEg0KBVJw",
-            "Y0lkGAEgASgFEg0KBUVycm9yGAIgASgFEg8KB01lc3NhZ2UYAyABKAliBnBy",
-            "b3RvMw=="));
+            "ChhPdXRlck1lc3NhZ2VfMTAwMDEucHJvdG8SAkVUIi4KC1Byb3RvRmxvYXQz",
+            "EgkKAXgYASABKAISCQoBeRgCIAEoAhIJCgF6GAMgASgCIj0KD1Byb3RvUXVh",
+            "dGVybmlvbhIJCgF4GAEgASgCEgkKAXkYAiABKAISCQoBehgDIAEoAhIJCgF3",
+            "GAQgASgCIjAKClJvdXRlclN5bmMSEQoJQ29ubmVjdElkGAEgASgNEg8KB0Fk",
+            "ZHJlc3MYAiABKAkiMQoPQzJNX1Rlc3RSZXF1ZXN0Eg0KBVJwY0lkGAEgASgF",
+            "Eg8KB3JlcXVlc3QYAiABKAkiUwoQTTJDX1Rlc3RSZXNwb25zZRINCgVScGNJ",
+            "ZBgBIAEoBRINCgVFcnJvchgCIAEoBRIPCgdNZXNzYWdlGAMgASgJEhAKCHJl",
+            "c3BvbnNlGAQgASgJIh0KDEMyR19FbnRlck1hcBINCgVScGNJZBgBIAEoBSJL",
+            "CgxHMkNfRW50ZXJNYXASDQoFUnBjSWQYASABKAUSDQoFRXJyb3IYAiABKAUS",
+            "DwoHTWVzc2FnZRgDIAEoCRIMCgRNeUlkGAQgASgDImUKCE1vdmVJbmZvEh8K",
+            "BlBvaW50cxgBIAMoCzIPLkVULlByb3RvRmxvYXQzEiUKCFJvdGF0aW9uGAIg",
+            "ASgLMhMuRVQuUHJvdG9RdWF0ZXJuaW9uEhEKCVR1cm5TcGVlZBgDIAEoBSLs",
+            "AQoIVW5pdEluZm8SDgoGVW5pdElkGAEgASgDEhAKCENvbmZpZ0lkGAIgASgF",
+            "EgwKBFR5cGUYAyABKAUSIQoIUG9zaXRpb24YBCABKAsyDy5FVC5Qcm90b0Zs",
+            "b2F0MxIgCgdGb3J3YXJkGAUgASgLMg8uRVQuUHJvdG9GbG9hdDMSIAoCS1YY",
+            "BiADKAsyFC5FVC5Vbml0SW5mby5LVkVudHJ5Eh4KCE1vdmVJbmZvGAcgASgL",
+            "MgwuRVQuTW92ZUluZm8aKQoHS1ZFbnRyeRILCgNrZXkYASABKAUSDQoFdmFs",
+            "dWUYAiABKAM6AjgBIi4KD00yQ19DcmVhdGVVbml0cxIbCgVVbml0cxgBIAMo",
+            "CzIMLkVULlVuaXRJbmZvIi4KEE0yQ19DcmVhdGVNeVVuaXQSGgoEVW5pdBgB",
+            "IAEoCzIMLkVULlVuaXRJbmZvIkIKFE0yQ19TdGFydFNjZW5lQ2hhbmdlEhcK",
+            "D1NjZW5lSW5zdGFuY2VJZBgBIAEoAxIRCglTY2VuZU5hbWUYAiABKAkiIAoP",
+            "TTJDX1JlbW92ZVVuaXRzEg0KBVVuaXRzGAEgAygDIkkKFUMyTV9QYXRoZmlu",
+            "ZGluZ1Jlc3VsdBINCgVScGNJZBgBIAEoBRIhCghQb3NpdGlvbhgCIAEoCzIP",
+            "LkVULlByb3RvRmxvYXQzIhkKCEMyTV9TdG9wEg0KBVJwY0lkGAEgASgFImcK",
+            "FU0yQ19QYXRoZmluZGluZ1Jlc3VsdBIKCgJJZBgBIAEoAxIhCghQb3NpdGlv",
+            "bhgCIAEoCzIPLkVULlByb3RvRmxvYXQzEh8KBlBvaW50cxgDIAMoCzIPLkVU",
+            "LlByb3RvRmxvYXQzIm8KCE0yQ19TdG9wEg0KBUVycm9yGAEgASgFEgoKAklk",
+            "GAIgASgDEiEKCFBvc2l0aW9uGAMgASgLMg8uRVQuUHJvdG9GbG9hdDMSJQoI",
+            "Um90YXRpb24YBCABKAsyEy5FVC5Qcm90b1F1YXRlcm5pb24iGQoIQzJHX1Bp",
+            "bmcSDQoFUnBjSWQYASABKAUiRwoIRzJDX1BpbmcSDQoFUnBjSWQYASABKAUS",
+            "DQoFRXJyb3IYAiABKAUSDwoHTWVzc2FnZRgDIAEoCRIMCgRUaW1lGAQgASgD",
+            "IgoKCEcyQ19UZXN0Ij4KCkMyTV9SZWxvYWQSDQoFUnBjSWQYASABKAUSDwoH",
+            "QWNjb3VudBgCIAEoCRIQCghQYXNzd29yZBgDIAEoCSI7CgpNMkNfUmVsb2Fk",
+            "Eg0KBVJwY0lkGAEgASgFEg0KBUVycm9yGAIgASgFEg8KB01lc3NhZ2UYAyAB",
+            "KAkiPQoJQzJSX0xvZ2luEg0KBVJwY0lkGAEgASgFEg8KB0FjY291bnQYAiAB",
+            "KAkSEAoIUGFzc3dvcmQYAyABKAkiaAoJUjJDX0xvZ2luEg0KBVJwY0lkGAEg",
+            "ASgFEg0KBUVycm9yGAIgASgFEg8KB01lc3NhZ2UYAyABKAkSDwoHQWRkcmVz",
+            "cxgEIAEoCRILCgNLZXkYBSABKAMSDgoGR2F0ZUlkGAYgASgDIjsKDUMyR19M",
+            "b2dpbkdhdGUSDQoFUnBjSWQYASABKAUSCwoDS2V5GAIgASgDEg4KBkdhdGVJ",
+            "ZBgDIAEoAyJQCg1HMkNfTG9naW5HYXRlEg0KBVJwY0lkGAEgASgFEg0KBUVy",
+            "cm9yGAIgASgFEg8KB01lc3NhZ2UYAyABKAkSEAoIUGxheWVySWQYBCABKAMi",
+            "JQoVRzJDX1Rlc3RIb3RmaXhNZXNzYWdlEgwKBEluZm8YASABKAkiLQoRQzJN",
+            "X1Rlc3RSb2JvdENhc2USDQoFUnBjSWQYASABKAUSCQoBThgCIAEoBSJNChFN",
+            "MkNfVGVzdFJvYm90Q2FzZRINCgVScGNJZBgBIAEoBRINCgVFcnJvchgCIAEo",
+            "BRIPCgdNZXNzYWdlGAMgASgJEgkKAU4YBCABKAUiLgoSQzJNX1Rlc3RSb2Jv",
+            "dENhc2UyEg0KBVJwY0lkGAEgASgFEgkKAU4YAiABKAUiLgoSTTJDX1Rlc3RS",
+            "b2JvdENhc2UyEg0KBVJwY0lkGAEgASgFEgkKAU4YAiABKAUiIAoPQzJNX1Ry",
+            "YW5zZmVyTWFwEg0KBVJwY0lkGAEgASgFIkAKD00yQ19UcmFuc2Zlck1hcBIN",
+            "CgVScGNJZBgBIAEoBRINCgVFcnJvchgCIAEoBRIPCgdNZXNzYWdlGAMgASgJ",
+            "Ih4KDUMyR19CZW5jaG1hcmsSDQoFUnBjSWQYASABKAUiPgoNRzJDX0JlbmNo",
+            "bWFyaxINCgVScGNJZBgBIAEoBRINCgVFcnJvchgCIAEoBRIPCgdNZXNzYWdl",
+            "GAMgASgJYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::ET.float3), global::ET.float3.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::ET.quaternion), global::ET.quaternion.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ET.ProtoFloat3), global::ET.ProtoFloat3.Parser, new[]{ "X", "Y", "Z" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::ET.ProtoQuaternion), global::ET.ProtoQuaternion.Parser, new[]{ "X", "Y", "Z", "W" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ET.RouterSync), global::ET.RouterSync.Parser, new[]{ "ConnectId", "Address" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ET.C2M_TestRequest), global::ET.C2M_TestRequest.Parser, new[]{ "RpcId", "Request" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::ET.M2C_TestResponse), global::ET.M2C_TestResponse.Parser, new[]{ "RpcId", "Error", "Message", "Response" }, null, null, null, null),
@@ -155,16 +156,16 @@ public static class OuterMessage
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class float3 : pb::IMessage<float3>
+  public sealed partial class ProtoFloat3 : pb::IMessage<ProtoFloat3>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<float3> _parser = new pb::MessageParser<float3>(() => new float3());
+    private static readonly pb::MessageParser<ProtoFloat3> _parser = new pb::MessageParser<ProtoFloat3>(() => new ProtoFloat3());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<float3> Parser { get { return _parser; } }
+    public static pb::MessageParser<ProtoFloat3> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -180,7 +181,7 @@ public static class OuterMessage
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float3() {
+    public ProtoFloat3() {
       OnConstruction();
     }
 
@@ -188,7 +189,7 @@ public static class OuterMessage
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float3(float3 other) : this() {
+    public ProtoFloat3(ProtoFloat3 other) : this() {
       x_ = other.x_;
       y_ = other.y_;
       z_ = other.z_;
@@ -197,8 +198,8 @@ public static class OuterMessage
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public float3 Clone() {
-      return new float3(this);
+    public ProtoFloat3 Clone() {
+      return new ProtoFloat3(this);
     }
 
     /// <summary>Field number for the "x" field.</summary>
@@ -240,12 +241,12 @@ public static class OuterMessage
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as float3);
+      return Equals(other as ProtoFloat3);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(float3 other) {
+    public bool Equals(ProtoFloat3 other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -344,7 +345,7 @@ public static class OuterMessage
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(float3 other) {
+    public void MergeFrom(ProtoFloat3 other) {
       if (other == null) {
         return;
       }
@@ -427,16 +428,16 @@ public static class OuterMessage
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class quaternion : pb::IMessage<quaternion>
+  public sealed partial class ProtoQuaternion : pb::IMessage<ProtoQuaternion>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<quaternion> _parser = new pb::MessageParser<quaternion>(() => new quaternion());
+    private static readonly pb::MessageParser<ProtoQuaternion> _parser = new pb::MessageParser<ProtoQuaternion>(() => new ProtoQuaternion());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<quaternion> Parser { get { return _parser; } }
+    public static pb::MessageParser<ProtoQuaternion> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -452,7 +453,7 @@ public static class OuterMessage
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public quaternion() {
+    public ProtoQuaternion() {
       OnConstruction();
     }
 
@@ -460,7 +461,7 @@ public static class OuterMessage
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public quaternion(quaternion other) : this() {
+    public ProtoQuaternion(ProtoQuaternion other) : this() {
       x_ = other.x_;
       y_ = other.y_;
       z_ = other.z_;
@@ -470,8 +471,8 @@ public static class OuterMessage
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public quaternion Clone() {
-      return new quaternion(this);
+    public ProtoQuaternion Clone() {
+      return new ProtoQuaternion(this);
     }
 
     /// <summary>Field number for the "x" field.</summary>
@@ -525,12 +526,12 @@ public static class OuterMessage
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as quaternion);
+      return Equals(other as ProtoQuaternion);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(quaternion other) {
+    public bool Equals(ProtoQuaternion other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -642,7 +643,7 @@ public static class OuterMessage
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(quaternion other) {
+    public void MergeFrom(ProtoQuaternion other) {
       if (other == null) {
         return;
       }
@@ -2085,21 +2086,21 @@ public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessag
 
     /// <summary>Field number for the "Points" field.</summary>
     public const int PointsFieldNumber = 1;
-    private static readonly pb::FieldCodec<global::ET.float3> _repeated_points_codec
-        = pb::FieldCodec.ForMessage(10, global::ET.float3.Parser);
-    private readonly pbc::RepeatedField<global::ET.float3> points_ = new pbc::RepeatedField<global::ET.float3>();
+    private static readonly pb::FieldCodec<global::ET.ProtoFloat3> _repeated_points_codec
+        = pb::FieldCodec.ForMessage(10, global::ET.ProtoFloat3.Parser);
+    private readonly pbc::RepeatedField<global::ET.ProtoFloat3> points_ = new pbc::RepeatedField<global::ET.ProtoFloat3>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::ET.float3> Points {
+    public pbc::RepeatedField<global::ET.ProtoFloat3> Points {
       get { return points_; }
     }
 
     /// <summary>Field number for the "Rotation" field.</summary>
     public const int RotationFieldNumber = 2;
-    private global::ET.quaternion rotation_;
+    private global::ET.ProtoQuaternion rotation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ET.quaternion Rotation {
+    public global::ET.ProtoQuaternion Rotation {
       get { return rotation_; }
       set {
         rotation_ = value;
@@ -2224,7 +2225,7 @@ public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessag
       points_.Add(other.points_);
       if (other.rotation_ != null) {
         if (rotation_ == null) {
-          Rotation = new global::ET.quaternion();
+          Rotation = new global::ET.ProtoQuaternion();
         }
         Rotation.MergeFrom(other.Rotation);
       }
@@ -2256,7 +2257,7 @@ public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessag
           }
           case 18: {
             if (rotation_ == null) {
-              Rotation = new global::ET.quaternion();
+              Rotation = new global::ET.ProtoQuaternion();
             }
             input.ReadMessage(Rotation);
             break;
@@ -2290,7 +2291,7 @@ public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessag
           }
           case 18: {
             if (rotation_ == null) {
-              Rotation = new global::ET.quaternion();
+              Rotation = new global::ET.ProtoQuaternion();
             }
             input.ReadMessage(Rotation);
             break;
@@ -2395,10 +2396,10 @@ public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessag
 
     /// <summary>Field number for the "Position" field.</summary>
     public const int PositionFieldNumber = 4;
-    private global::ET.float3 position_;
+    private global::ET.ProtoFloat3 position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ET.float3 Position {
+    public global::ET.ProtoFloat3 Position {
       get { return position_; }
       set {
         position_ = value;
@@ -2407,10 +2408,10 @@ public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessag
 
     /// <summary>Field number for the "Forward" field.</summary>
     public const int ForwardFieldNumber = 5;
-    private global::ET.float3 forward_;
+    private global::ET.ProtoFloat3 forward_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ET.float3 Forward {
+    public global::ET.ProtoFloat3 Forward {
       get { return forward_; }
       set {
         forward_ = value;
@@ -2606,13 +2607,13 @@ public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessag
       }
       if (other.position_ != null) {
         if (position_ == null) {
-          Position = new global::ET.float3();
+          Position = new global::ET.ProtoFloat3();
         }
         Position.MergeFrom(other.Position);
       }
       if (other.forward_ != null) {
         if (forward_ == null) {
-          Forward = new global::ET.float3();
+          Forward = new global::ET.ProtoFloat3();
         }
         Forward.MergeFrom(other.Forward);
       }
@@ -2656,14 +2657,14 @@ public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessag
           }
           case 34: {
             if (position_ == null) {
-              Position = new global::ET.float3();
+              Position = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Position);
             break;
           }
           case 42: {
             if (forward_ == null) {
-              Forward = new global::ET.float3();
+              Forward = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Forward);
             break;
@@ -2712,14 +2713,14 @@ public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessag
           }
           case 34: {
             if (position_ == null) {
-              Position = new global::ET.float3();
+              Position = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Position);
             break;
           }
           case 42: {
             if (forward_ == null) {
-              Forward = new global::ET.float3();
+              Forward = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Forward);
             break;
@@ -3566,7 +3567,7 @@ public sealed partial class M2C_RemoveUnits : MessageObject, IMessage, pb::IMess
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2M_PathfindingResult)]
-public sealed partial class C2M_PathfindingResult : MessageObject, IMessage, pb::IMessage<C2M_PathfindingResult>
+public sealed partial class C2M_PathfindingResult : MessageObject, IRequest, pb::IMessage<C2M_PathfindingResult>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -3625,10 +3626,10 @@ public sealed partial class C2M_PathfindingResult : MessageObject, IMessage, pb:
 
     /// <summary>Field number for the "Position" field.</summary>
     public const int PositionFieldNumber = 2;
-    private global::ET.float3 position_;
+    private global::ET.ProtoFloat3 position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ET.float3 Position {
+    public global::ET.ProtoFloat3 Position {
       get { return position_; }
       set {
         position_ = value;
@@ -3738,7 +3739,7 @@ public sealed partial class C2M_PathfindingResult : MessageObject, IMessage, pb:
       }
       if (other.position_ != null) {
         if (position_ == null) {
-          Position = new global::ET.float3();
+          Position = new global::ET.ProtoFloat3();
         }
         Position.MergeFrom(other.Position);
       }
@@ -3767,7 +3768,7 @@ public sealed partial class C2M_PathfindingResult : MessageObject, IMessage, pb:
           }
           case 18: {
             if (position_ == null) {
-              Position = new global::ET.float3();
+              Position = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Position);
             break;
@@ -3797,7 +3798,7 @@ public sealed partial class C2M_PathfindingResult : MessageObject, IMessage, pb:
           }
           case 18: {
             if (position_ == null) {
-              Position = new global::ET.float3();
+              Position = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Position);
             break;
@@ -3811,7 +3812,7 @@ public sealed partial class C2M_PathfindingResult : MessageObject, IMessage, pb:
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2M_Stop)]
-public sealed partial class C2M_Stop : MessageObject, IMessage, pb::IMessage<C2M_Stop>
+public sealed partial class C2M_Stop : MessageObject, IRequest, pb::IMessage<C2M_Stop>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -4070,10 +4071,10 @@ public sealed partial class M2C_PathfindingResult : MessageObject, IMessage, pb:
 
     /// <summary>Field number for the "Position" field.</summary>
     public const int PositionFieldNumber = 2;
-    private global::ET.float3 position_;
+    private global::ET.ProtoFloat3 position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ET.float3 Position {
+    public global::ET.ProtoFloat3 Position {
       get { return position_; }
       set {
         position_ = value;
@@ -4082,12 +4083,12 @@ public sealed partial class M2C_PathfindingResult : MessageObject, IMessage, pb:
 
     /// <summary>Field number for the "Points" field.</summary>
     public const int PointsFieldNumber = 3;
-    private static readonly pb::FieldCodec<global::ET.float3> _repeated_points_codec
-        = pb::FieldCodec.ForMessage(26, global::ET.float3.Parser);
-    private readonly pbc::RepeatedField<global::ET.float3> points_ = new pbc::RepeatedField<global::ET.float3>();
+    private static readonly pb::FieldCodec<global::ET.ProtoFloat3> _repeated_points_codec
+        = pb::FieldCodec.ForMessage(26, global::ET.ProtoFloat3.Parser);
+    private readonly pbc::RepeatedField<global::ET.ProtoFloat3> points_ = new pbc::RepeatedField<global::ET.ProtoFloat3>();
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public pbc::RepeatedField<global::ET.float3> Points {
+    public pbc::RepeatedField<global::ET.ProtoFloat3> Points {
       get { return points_; }
     }
 
@@ -4199,7 +4200,7 @@ public sealed partial class M2C_PathfindingResult : MessageObject, IMessage, pb:
       }
       if (other.position_ != null) {
         if (position_ == null) {
-          Position = new global::ET.float3();
+          Position = new global::ET.ProtoFloat3();
         }
         Position.MergeFrom(other.Position);
       }
@@ -4229,7 +4230,7 @@ public sealed partial class M2C_PathfindingResult : MessageObject, IMessage, pb:
           }
           case 18: {
             if (position_ == null) {
-              Position = new global::ET.float3();
+              Position = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Position);
             break;
@@ -4263,7 +4264,7 @@ public sealed partial class M2C_PathfindingResult : MessageObject, IMessage, pb:
           }
           case 18: {
             if (position_ == null) {
-              Position = new global::ET.float3();
+              Position = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Position);
             break;
@@ -4354,10 +4355,10 @@ public sealed partial class M2C_Stop : MessageObject, IMessage, pb::IMessage<M2C
 
     /// <summary>Field number for the "Position" field.</summary>
     public const int PositionFieldNumber = 3;
-    private global::ET.float3 position_;
+    private global::ET.ProtoFloat3 position_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ET.float3 Position {
+    public global::ET.ProtoFloat3 Position {
       get { return position_; }
       set {
         position_ = value;
@@ -4366,10 +4367,10 @@ public sealed partial class M2C_Stop : MessageObject, IMessage, pb::IMessage<M2C
 
     /// <summary>Field number for the "Rotation" field.</summary>
     public const int RotationFieldNumber = 4;
-    private global::ET.quaternion rotation_;
+    private global::ET.ProtoQuaternion rotation_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public global::ET.quaternion Rotation {
+    public global::ET.ProtoQuaternion Rotation {
       get { return rotation_; }
       set {
         rotation_ = value;
@@ -4508,13 +4509,13 @@ public sealed partial class M2C_Stop : MessageObject, IMessage, pb::IMessage<M2C
       }
       if (other.position_ != null) {
         if (position_ == null) {
-          Position = new global::ET.float3();
+          Position = new global::ET.ProtoFloat3();
         }
         Position.MergeFrom(other.Position);
       }
       if (other.rotation_ != null) {
         if (rotation_ == null) {
-          Rotation = new global::ET.quaternion();
+          Rotation = new global::ET.ProtoQuaternion();
         }
         Rotation.MergeFrom(other.Rotation);
       }
@@ -4547,14 +4548,14 @@ public sealed partial class M2C_Stop : MessageObject, IMessage, pb::IMessage<M2C
           }
           case 26: {
             if (position_ == null) {
-              Position = new global::ET.float3();
+              Position = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Position);
             break;
           }
           case 34: {
             if (rotation_ == null) {
-              Rotation = new global::ET.quaternion();
+              Rotation = new global::ET.ProtoQuaternion();
             }
             input.ReadMessage(Rotation);
             break;
@@ -4588,14 +4589,14 @@ public sealed partial class M2C_Stop : MessageObject, IMessage, pb::IMessage<M2C
           }
           case 26: {
             if (position_ == null) {
-              Position = new global::ET.float3();
+              Position = new global::ET.ProtoFloat3();
             }
             input.ReadMessage(Position);
             break;
           }
           case 34: {
             if (rotation_ == null) {
-              Rotation = new global::ET.quaternion();
+              Rotation = new global::ET.ProtoQuaternion();
             }
             input.ReadMessage(Rotation);
             break;
@@ -7840,7 +7841,7 @@ public sealed partial class M2C_TestRobotCase : MessageObject, IResponse, pb::IM
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2M_TestRobotCase2)]
-public sealed partial class C2M_TestRobotCase2 : MessageObject, IMessage, pb::IMessage<C2M_TestRobotCase2>
+public sealed partial class C2M_TestRobotCase2 : MessageObject, IRequest, pb::IMessage<C2M_TestRobotCase2>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

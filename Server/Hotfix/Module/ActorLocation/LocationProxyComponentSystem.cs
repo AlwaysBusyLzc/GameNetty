@@ -13,7 +13,7 @@ namespace ET.Server
         {
             Fiber fiber = self.Fiber();
             Log.Info($"location proxy add {key}, {actorId} {TimeInfo.Instance.ServerNow()}");
-            ObjectAddRequest objectAddRequest = ObjectAddRequest.Create();
+            ObjectAddRequest objectAddRequest = new();
             objectAddRequest.Type = type;
             objectAddRequest.Key = key;
             objectAddRequest.ActorId = actorId.ToProto();
@@ -25,10 +25,10 @@ namespace ET.Server
             Fiber fiber = self.Fiber();
             Log.Info($"location proxy lock {key}, {actorId} {TimeInfo.Instance.ServerNow()}");
 
-            ObjectLockRequest objectLockRequest = ObjectLockRequest.Create();
+            ObjectLockRequest objectLockRequest = new();
             objectLockRequest.Type = type;
             objectLockRequest.Key = key;
-            objectLockRequest.ActorId = actorId;
+            objectLockRequest.ActorId = actorId.ToProto();
             objectLockRequest.Time = time;
             await fiber.Root.GetComponent<MessageSender>().Call(GetLocationSceneId(key), objectLockRequest);
         }
@@ -37,11 +37,11 @@ namespace ET.Server
         {
             Fiber fiber = self.Fiber();
             Log.Info($"location proxy unlock {key}, {newActorId} {TimeInfo.Instance.ServerNow()}");
-            ObjectUnLockRequest objectUnLockRequest = ObjectUnLockRequest.Create();
+            ObjectUnLockRequest objectUnLockRequest = new();
             objectUnLockRequest.Type = type;
             objectUnLockRequest.Key = key;
-            objectUnLockRequest.OldActorId = oldActorId;
-            objectUnLockRequest.NewActorId = newActorId;
+            objectUnLockRequest.OldActorId = oldActorId.ToProto();
+            objectUnLockRequest.NewActorId = newActorId.ToProto();
             await fiber.Root.GetComponent<MessageSender>().Call(GetLocationSceneId(key), objectUnLockRequest);
         }
 
@@ -50,7 +50,7 @@ namespace ET.Server
             Fiber fiber = self.Fiber();
             Log.Info($"location proxy remove {key}, {TimeInfo.Instance.ServerNow()}");
 
-            ObjectRemoveRequest objectRemoveRequest = ObjectRemoveRequest.Create();
+            ObjectRemoveRequest objectRemoveRequest = new();
             objectRemoveRequest.Type = type;
             objectRemoveRequest.Key = key;
             await fiber.Root.GetComponent<MessageSender>().Call(GetLocationSceneId(key), objectRemoveRequest);
@@ -64,12 +64,12 @@ namespace ET.Server
             }
 
             // location server配置到共享区，一个大战区可以配置N多个location server,这里暂时为1
-            ObjectGetRequest objectGetRequest = ObjectGetRequest.Create();
+            ObjectGetRequest objectGetRequest = new();
             objectGetRequest.Type = type;
             objectGetRequest.Key = key;
             ObjectGetResponse response =
                     (ObjectGetResponse) await self.Root().GetComponent<MessageSender>().Call(GetLocationSceneId(key), objectGetRequest);
-            return response.ActorId;
+            return response.ActorId.ToActorId();
         }
 
         public static async ETTask AddLocation(this Entity self, int type)

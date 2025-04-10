@@ -119,7 +119,7 @@ namespace ET
         public static async ETTask<IResponse> Call(
                 this ProcessInnerSender self,
                 ActorId actorId,
-                IMessage request,
+                IRequest request,
                 bool needException = true
         )
         {

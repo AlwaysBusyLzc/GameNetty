@@ -44,7 +44,7 @@ namespace ET
 
         public int RpcId { get; set; }
         public ActorId ActorId;
-        public IMessage MessageObject;
+        public IRequest MessageObject;
     }
     
     [Message(3)]

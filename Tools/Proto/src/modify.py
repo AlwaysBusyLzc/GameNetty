@@ -144,7 +144,7 @@ def modify(language):
 
                         f.write(f"[Message({message_name}.{class_name})]\n")
                         msg_type = comment_info["msg_type"]
-                        if msg_type == "req":
+                        if msg_type == "req" and "res_type" in comment_info:
                             res_type = comment_info["res_type"]
                             f.write(f"[ResponseType(nameof({res_type}))]\n")
 
