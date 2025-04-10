@@ -13,41 +13,36 @@ namespace ET {
 
 public static class OuterMessage
 {
- public const ushort float3 = 10002;
- public const ushort quaternion = 10003;
- public const ushort RouterSync = 10004;
- public const ushort C2M_TestRequest = 10005;
- public const ushort M2C_TestResponse = 10006;
- public const ushort C2G_EnterMap = 10007;
- public const ushort G2C_EnterMap = 10008;
- public const ushort MoveInfo = 10009;
- public const ushort UnitInfo = 10010;
- public const ushort M2C_CreateUnits = 10011;
- public const ushort M2C_CreateMyUnit = 10012;
- public const ushort M2C_StartSceneChange = 10013;
- public const ushort M2C_RemoveUnits = 10014;
- public const ushort C2M_PathfindingResult = 10015;
- public const ushort C2M_Stop = 10016;
- public const ushort M2C_PathfindingResult = 10017;
- public const ushort M2C_Stop = 10018;
- public const ushort C2G_Ping = 10019;
- public const ushort G2C_Ping = 10020;
- public const ushort G2C_Test = 10021;
- public const ushort C2M_Reload = 10022;
- public const ushort M2C_Reload = 10023;
- public const ushort C2R_Login = 10024;
- public const ushort R2C_Login = 10025;
- public const ushort C2G_LoginGate = 10026;
- public const ushort G2C_LoginGate = 10027;
- public const ushort G2C_TestHotfixMessage = 10028;
- public const ushort C2M_TestRobotCase = 10029;
- public const ushort M2C_TestRobotCase = 10030;
- public const ushort C2M_TestRobotCase2 = 10031;
- public const ushort M2C_TestRobotCase2 = 10032;
- public const ushort C2M_TransferMap = 10033;
- public const ushort M2C_TransferMap = 10034;
- public const ushort C2G_Benchmark = 10035;
- public const ushort G2C_Benchmark = 10036;
+    public const ushort C2M_TestRequest = 10002;
+    public const ushort M2C_TestResponse = 10003;
+    public const ushort C2G_EnterMap = 10004;
+    public const ushort G2C_EnterMap = 10005;
+    public const ushort M2C_CreateUnits = 10006;
+    public const ushort M2C_CreateMyUnit = 10007;
+    public const ushort M2C_StartSceneChange = 10008;
+    public const ushort M2C_RemoveUnits = 10009;
+    public const ushort C2M_PathfindingResult = 10010;
+    public const ushort C2M_Stop = 10011;
+    public const ushort M2C_PathfindingResult = 10012;
+    public const ushort M2C_Stop = 10013;
+    public const ushort C2G_Ping = 10014;
+    public const ushort G2C_Ping = 10015;
+    public const ushort G2C_Test = 10016;
+    public const ushort C2M_Reload = 10017;
+    public const ushort M2C_Reload = 10018;
+    public const ushort C2R_Login = 10019;
+    public const ushort R2C_Login = 10020;
+    public const ushort C2G_LoginGate = 10021;
+    public const ushort G2C_LoginGate = 10022;
+    public const ushort G2C_TestHotfixMessage = 10023;
+    public const ushort C2M_TestRobotCase = 10024;
+    public const ushort M2C_TestRobotCase = 10025;
+    public const ushort C2M_TestRobotCase2 = 10026;
+    public const ushort M2C_TestRobotCase2 = 10027;
+    public const ushort C2M_TransferMap = 10028;
+    public const ushort M2C_TransferMap = 10029;
+    public const ushort C2G_Benchmark = 10030;
+    public const ushort G2C_Benchmark = 10031;
 
 }
 
@@ -160,8 +155,7 @@ public static class OuterMessage
   }
   #region Messages
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(OuterMessage.float3)]
-public sealed partial class float3 : MessageObject, IMessage, pb::IMessage<float3>
+  public sealed partial class float3 : pb::IMessage<float3>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -433,8 +427,7 @@ public sealed partial class float3 : MessageObject, IMessage, pb::IMessage<float
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(OuterMessage.quaternion)]
-public sealed partial class quaternion : MessageObject, IMessage, pb::IMessage<quaternion>
+  public sealed partial class quaternion : pb::IMessage<quaternion>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -743,8 +736,7 @@ public sealed partial class quaternion : MessageObject, IMessage, pb::IMessage<q
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(OuterMessage.RouterSync)]
-public sealed partial class RouterSync : MessageObject, IMessage, pb::IMessage<RouterSync>
+  public sealed partial class RouterSync : pb::IMessage<RouterSync>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -983,7 +975,7 @@ public sealed partial class RouterSync : MessageObject, IMessage, pb::IMessage<R
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2M_TestRequest)]
-ResponseType(nameof(M2C_TestResponse))
+[ResponseType(nameof(M2C_TestResponse))]
 public sealed partial class C2M_TestRequest : MessageObject, IRequest, pb::IMessage<C2M_TestRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
@@ -1529,11 +1521,12 @@ public sealed partial class M2C_TestResponse : MessageObject, IResponse, pb::IMe
   }
 
   /// <summary>
-  /// ResponseType G2C_EnterMap
+  /// res G2C_EnterMap
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2G_EnterMap)]
-public sealed partial class C2G_EnterMap : MessageObject, IMessage, pb::IMessage<C2G_EnterMap>
+[ResponseType(nameof(G2C_EnterMap))]
+public sealed partial class C2G_EnterMap : MessageObject, IRequest, pb::IMessage<C2G_EnterMap>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -1732,7 +1725,7 @@ public sealed partial class C2G_EnterMap : MessageObject, IMessage, pb::IMessage
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.G2C_EnterMap)]
-public sealed partial class G2C_EnterMap : MessageObject, IMessage, pb::IMessage<G2C_EnterMap>
+public sealed partial class G2C_EnterMap : MessageObject, IResponse, pb::IMessage<G2C_EnterMap>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2044,8 +2037,7 @@ public sealed partial class G2C_EnterMap : MessageObject, IMessage, pb::IMessage
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(OuterMessage.MoveInfo)]
-public sealed partial class MoveInfo : MessageObject, IMessage, pb::IMessage<MoveInfo>
+  public sealed partial class MoveInfo : pb::IMessage<MoveInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -2315,8 +2307,7 @@ public sealed partial class MoveInfo : MessageObject, IMessage, pb::IMessage<Mov
   }
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-[Message(OuterMessage.UnitInfo)]
-public sealed partial class UnitInfo : MessageObject, IMessage, pb::IMessage<UnitInfo>
+  public sealed partial class UnitInfo : pb::IMessage<UnitInfo>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -4617,11 +4608,12 @@ public sealed partial class M2C_Stop : MessageObject, IMessage, pb::IMessage<M2C
   }
 
   /// <summary>
-  /// ResponseType G2C_Ping
+  /// res G2C_Ping
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2G_Ping)]
-public sealed partial class C2G_Ping : MessageObject, IMessage, pb::IMessage<C2G_Ping>
+[ResponseType(nameof(G2C_Ping))]
+public sealed partial class C2G_Ping : MessageObject, IRequest, pb::IMessage<C2G_Ping>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -4820,7 +4812,7 @@ public sealed partial class C2G_Ping : MessageObject, IMessage, pb::IMessage<C2G
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.G2C_Ping)]
-public sealed partial class G2C_Ping : MessageObject, IMessage, pb::IMessage<G2C_Ping>
+public sealed partial class G2C_Ping : MessageObject, IResponse, pb::IMessage<G2C_Ping>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -5291,11 +5283,12 @@ public sealed partial class G2C_Test : MessageObject, IMessage, pb::IMessage<G2C
   }
 
   /// <summary>
-  /// ResponseType M2C_Reload
+  /// res M2C_Reload
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2M_Reload)]
-public sealed partial class C2M_Reload : MessageObject, IMessage, pb::IMessage<C2M_Reload>
+[ResponseType(nameof(M2C_Reload))]
+public sealed partial class C2M_Reload : MessageObject, IRequest, pb::IMessage<C2M_Reload>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -5568,7 +5561,7 @@ public sealed partial class C2M_Reload : MessageObject, IMessage, pb::IMessage<C
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.M2C_Reload)]
-public sealed partial class M2C_Reload : MessageObject, IMessage, pb::IMessage<M2C_Reload>
+public sealed partial class M2C_Reload : MessageObject, IResponse, pb::IMessage<M2C_Reload>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -5840,11 +5833,12 @@ public sealed partial class M2C_Reload : MessageObject, IMessage, pb::IMessage<M
   }
 
   /// <summary>
-  /// ResponseType R2C_Login
+  /// res R2C_Login
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2R_Login)]
-public sealed partial class C2R_Login : MessageObject, IMessage, pb::IMessage<C2R_Login>
+[ResponseType(nameof(R2C_Login))]
+public sealed partial class C2R_Login : MessageObject, IRequest, pb::IMessage<C2R_Login>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6123,7 +6117,7 @@ public sealed partial class C2R_Login : MessageObject, IMessage, pb::IMessage<C2
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.R2C_Login)]
-public sealed partial class R2C_Login : MessageObject, IMessage, pb::IMessage<R2C_Login>
+public sealed partial class R2C_Login : MessageObject, IResponse, pb::IMessage<R2C_Login>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6506,11 +6500,12 @@ public sealed partial class R2C_Login : MessageObject, IMessage, pb::IMessage<R2
   }
 
   /// <summary>
-  /// ResponseType G2C_LoginGate
+  /// res G2C_LoginGate
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2G_LoginGate)]
-public sealed partial class C2G_LoginGate : MessageObject, IMessage, pb::IMessage<C2G_LoginGate>
+[ResponseType(nameof(G2C_LoginGate))]
+public sealed partial class C2G_LoginGate : MessageObject, IRequest, pb::IMessage<C2G_LoginGate>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -6786,7 +6781,7 @@ public sealed partial class C2G_LoginGate : MessageObject, IMessage, pb::IMessag
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.G2C_LoginGate)]
-public sealed partial class G2C_LoginGate : MessageObject, IMessage, pb::IMessage<G2C_LoginGate>
+public sealed partial class G2C_LoginGate : MessageObject, IResponse, pb::IMessage<G2C_LoginGate>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -7294,11 +7289,12 @@ public sealed partial class G2C_TestHotfixMessage : MessageObject, IMessage, pb:
   }
 
   /// <summary>
-  /// ResponseType M2C_TestRobotCase
+  /// res M2C_TestRobotCase
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2M_TestRobotCase)]
-public sealed partial class C2M_TestRobotCase : MessageObject, IMessage, pb::IMessage<C2M_TestRobotCase>
+[ResponseType(nameof(M2C_TestRobotCase))]
+public sealed partial class C2M_TestRobotCase : MessageObject, IRequest, pb::IMessage<C2M_TestRobotCase>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -7534,7 +7530,7 @@ public sealed partial class C2M_TestRobotCase : MessageObject, IMessage, pb::IMe
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.M2C_TestRobotCase)]
-public sealed partial class M2C_TestRobotCase : MessageObject, IMessage, pb::IMessage<M2C_TestRobotCase>
+public sealed partial class M2C_TestRobotCase : MessageObject, IResponse, pb::IMessage<M2C_TestRobotCase>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -8315,11 +8311,12 @@ public sealed partial class M2C_TestRobotCase2 : MessageObject, IMessage, pb::IM
   }
 
   /// <summary>
-  /// ResponseType M2C_TransferMap
+  /// res M2C_TransferMap
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2M_TransferMap)]
-public sealed partial class C2M_TransferMap : MessageObject, IMessage, pb::IMessage<C2M_TransferMap>
+[ResponseType(nameof(M2C_TransferMap))]
+public sealed partial class C2M_TransferMap : MessageObject, IRequest, pb::IMessage<C2M_TransferMap>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -8518,7 +8515,7 @@ public sealed partial class C2M_TransferMap : MessageObject, IMessage, pb::IMess
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.M2C_TransferMap)]
-public sealed partial class M2C_TransferMap : MessageObject, IMessage, pb::IMessage<M2C_TransferMap>
+public sealed partial class M2C_TransferMap : MessageObject, IResponse, pb::IMessage<M2C_TransferMap>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -8790,11 +8787,12 @@ public sealed partial class M2C_TransferMap : MessageObject, IMessage, pb::IMess
   }
 
   /// <summary>
-  /// ResponseType G2C_Benchmark
+  /// res G2C_Benchmark
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.C2G_Benchmark)]
-public sealed partial class C2G_Benchmark : MessageObject, IMessage, pb::IMessage<C2G_Benchmark>
+[ResponseType(nameof(G2C_Benchmark))]
+public sealed partial class C2G_Benchmark : MessageObject, IRequest, pb::IMessage<C2G_Benchmark>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
@@ -8993,7 +8991,7 @@ public sealed partial class C2G_Benchmark : MessageObject, IMessage, pb::IMessag
 
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
 [Message(OuterMessage.G2C_Benchmark)]
-public sealed partial class G2C_Benchmark : MessageObject, IMessage, pb::IMessage<G2C_Benchmark>
+public sealed partial class G2C_Benchmark : MessageObject, IResponse, pb::IMessage<G2C_Benchmark>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif

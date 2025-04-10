@@ -81,7 +81,7 @@ namespace ET.Server
                         actorId.Process = fromProcess;
                         res.RpcId = rpcId;
                         self.Send(actorId, res);
-                        ((MessageObject)res).Dispose();
+                        // ((MessageObject)res).Dispose();
                     }
                 }
                 default:

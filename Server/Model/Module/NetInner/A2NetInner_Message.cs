@@ -11,12 +11,14 @@ namespace ET
 
         public override void Dispose()
         {
+            this.RpcId = default;
             this.FromAddress = default;
             this.ActorId = default;
             
             ObjectPool.Instance.Recycle(this);
         }
         
+        public int RpcId { get; set; }
         public Address FromAddress;
         public ActorId ActorId;
         public IMessage MessageObject;
@@ -40,6 +42,7 @@ namespace ET
             ObjectPool.Instance.Recycle(this);
         }
 
+        public int RpcId { get; set; }
         public ActorId ActorId;
         public IMessage MessageObject;
     }
@@ -61,6 +64,7 @@ namespace ET
             ObjectPool.Instance.Recycle(this);
         }
         
+        public int RpcId { get; set; }
         public int Error { get; set; }
         public string Message { get; set; }
         

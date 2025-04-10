@@ -38,13 +38,13 @@ message M2C_TestResponse // res
 	string response = 4;
 }
 
-// ResponseType G2C_EnterMap
-message C2G_EnterMap // ISessionRequest
+// res G2C_EnterMap
+message C2G_EnterMap // req
 {
 	int32 RpcId = 1;
 }
 
-message G2C_EnterMap // ISessionResponse
+message G2C_EnterMap // res
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
@@ -76,41 +76,41 @@ message M2C_CreateUnits // msg
 	repeated UnitInfo Units = 1;
 }
 
-message M2C_CreateMyUnit // IMessage
+message M2C_CreateMyUnit // msg
 {
 	UnitInfo Unit = 1;
 }
 
-message M2C_StartSceneChange // IMessage
+message M2C_StartSceneChange // msg
 {
 	int64 SceneInstanceId = 1;
 	string SceneName = 2;
 }
 
-message M2C_RemoveUnits // IMessage
+message M2C_RemoveUnits // msg
 {
 	repeated int64 Units = 1;
 }
 
-message C2M_PathfindingResult // ILocationMessage
+message C2M_PathfindingResult // msg
 {
 	int32 RpcId = 1;
 	float3 Position = 2;
 }
 
-message C2M_Stop // ILocationMessage
+message C2M_Stop // msg
 {
 	int32 RpcId = 1;
 }
 
-message M2C_PathfindingResult // IMessage
+message M2C_PathfindingResult // msg
 {
 	int64 Id = 1;
 	float3 Position = 2;
 	repeated float3 Points = 3;
 }
 
-message M2C_Stop // IMessage
+message M2C_Stop // msg
 {
 	int32 Error = 1;
 	int64 Id = 2;
@@ -118,13 +118,13 @@ message M2C_Stop // IMessage
 	quaternion Rotation = 4;
 }
 
-// ResponseType G2C_Ping
-message C2G_Ping // ISessionRequest
+// res G2C_Ping
+message C2G_Ping // req
 {
 	int32 RpcId = 1;
 }
 
-message G2C_Ping // ISessionResponse
+message G2C_Ping // res
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
@@ -133,34 +133,34 @@ message G2C_Ping // ISessionResponse
 }
 
 
-message G2C_Test // ISessionMessage
+message G2C_Test // msg
 {
 }
 
-// ResponseType M2C_Reload
-message C2M_Reload // ISessionRequest
+// res M2C_Reload
+message C2M_Reload // req
 {
 	int32 RpcId = 1;
 	string Account = 2;
 	string Password = 3;
 }
 
-message M2C_Reload // ISessionResponse
+message M2C_Reload // res
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
 	string Message = 3;
 }
 
-// ResponseType R2C_Login
-message C2R_Login // ISessionRequest
+// res R2C_Login
+message C2R_Login // req
 {
 	int32 RpcId = 1;
 	string  Account = 2;  // 帐号
 	string  Password = 3;  // 密码
 }
 
-message R2C_Login // ISessionResponse
+message R2C_Login // res
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
@@ -170,15 +170,15 @@ message R2C_Login // ISessionResponse
 	int64 GateId = 6;
 }
 
-// ResponseType G2C_LoginGate
-message C2G_LoginGate // ISessionRequest
+// res G2C_LoginGate
+message C2G_LoginGate // req
 {
 	int32 RpcId = 1;
 	int64 Key = 2;  // 帐号
 	int64 GateId = 3;
 }
 
-message G2C_LoginGate // ISessionResponse
+message G2C_LoginGate // res
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
@@ -186,19 +186,19 @@ message G2C_LoginGate // ISessionResponse
 	int64 PlayerId = 4;
 }
 
-message G2C_TestHotfixMessage // ISessionMessage
+message G2C_TestHotfixMessage // msg
 {
 	string Info = 1;
 }
 
-// ResponseType M2C_TestRobotCase
-message C2M_TestRobotCase // ILocationRequest
+// res M2C_TestRobotCase
+message C2M_TestRobotCase // req
 {
 	int32 RpcId = 1;
 	int32 N = 2;
 }
 
-message M2C_TestRobotCase // ILocationResponse
+message M2C_TestRobotCase // res
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
@@ -206,38 +206,38 @@ message M2C_TestRobotCase // ILocationResponse
 	int32 N = 4;
 }
 
-message C2M_TestRobotCase2 // ILocationMessage
+message C2M_TestRobotCase2 // msg
 {
 	int32 RpcId = 1;
 	int32 N = 2;
 }
 
-message M2C_TestRobotCase2 // ILocationMessage
+message M2C_TestRobotCase2 // msg
 {
 	int32 RpcId = 1;
 	int32 N = 2;
 }
 
-// ResponseType M2C_TransferMap
-message C2M_TransferMap // ILocationRequest
+// res M2C_TransferMap
+message C2M_TransferMap // req
 {
 	int32 RpcId = 1;
 }
 
-message M2C_TransferMap // ILocationResponse
+message M2C_TransferMap // res
 {
 	int32 RpcId = 1;
 	int32 Error = 2;
 	string Message = 3;
 }
 
-// ResponseType G2C_Benchmark
-message C2G_Benchmark // ISessionRequest
+// res G2C_Benchmark
+message C2G_Benchmark // req
 {
 	int32 RpcId = 1;
 }
 
-message G2C_Benchmark // ISessionResponse
+message G2C_Benchmark // res
 {
 	int32 RpcId = 1;
 	int32 Error = 2;

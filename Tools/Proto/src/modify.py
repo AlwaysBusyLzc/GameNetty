@@ -24,7 +24,7 @@ public static class {0}
 }}
 """
 
-opcode_item = ' public const ushort {0} = {1};\n'
+opcode_item = '    public const ushort {0} = {1};\n'
 
 
 def modify(language):
@@ -96,12 +96,11 @@ def modify(language):
                     }
                     continue
 
-                # 普通消息全认为是 msg
+                # 普通proto 结构体
                 match_msg = re.match(proto_msg_pattern, it)
                 if match_msg:
                     msg_name = match_msg.group(1)
                     proto_comments[msg_name] = {
-                        "msg_type": "msg",
                         "msg_id": 0,
                     }
 
@@ -112,6 +111,10 @@ def modify(language):
             # 写 opcode
             opcode_contents = ""
             for msg_name, info in proto_comments.items():
+                # 没有消息类型 则是普通proto 结构体 不做消息编号 opcode
+                if "msg_type" not in info:
+                    continue
+
                 start_id = start_id + 1
                 info["msg_id"] = start_id
                 opcode_contents += opcode_item.format(msg_name, info["msg_id"])
@@ -134,13 +137,20 @@ def modify(language):
                             print(f"modify failed, proto file: {proto_file_name}, class: {class_name}'s comment not found")
                             return
 
+                        # 普通proto 结构体 不修改
+                        if "msg_type" not in comment_info:
+                            f.write(line)
+                            continue
+
                         f.write(f"[Message({message_name}.{class_name})]\n")
                         msg_type = comment_info["msg_type"]
                         if msg_type == "req":
                             res_type = comment_info["res_type"]
-                            f.write(f"ResponseType(nameof({res_type}))\n")
+                            f.write(f"[ResponseType(nameof({res_type}))]\n")
 
-                        interface_type = "IMessage"
+                        interface_type = ""
+                        if msg_type == "msg":
+                            interface_type = "IMessage"
                         if msg_type == "req":
                             interface_type = "IRequest"
                         if msg_type == "res":
