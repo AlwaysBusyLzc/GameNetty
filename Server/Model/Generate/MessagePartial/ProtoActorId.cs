@@ -1,7 +1,6 @@
 ﻿
 namespace ET
 {
-    [EnableClass]
     public partial class ProtoAddress
     {
         public Address ToAddress()
@@ -25,7 +24,6 @@ namespace ET
     }
     
     
-    [EnableClass]
     public partial class ProtoActorId
     {
         public ActorId ToActorId()

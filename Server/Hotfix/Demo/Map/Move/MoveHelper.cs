@@ -50,8 +50,8 @@ namespace ET.Server
             M2C_Stop m2CStop = new();
             m2CStop.Error = error;
             m2CStop.Id = unit.Id;
-            m2CStop.Position = unit.Position;
-            m2CStop.Rotation = unit.Rotation;
+            m2CStop.Position = unit.Position.ToProto();
+            m2CStop.Rotation = unit.Rotation.ToProto();
             
             MapMessageHelper.Broadcast(unit, m2CStop);
         }
