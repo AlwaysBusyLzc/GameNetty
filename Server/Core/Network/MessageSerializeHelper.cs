@@ -33,6 +33,9 @@ namespace ET
             return o as MessageObject;
         }
         
+        /**
+         * 前面预留出 headOffset的长度，然后写入opcode 和 message到 stream
+         */
         public static ushort MessageToStream(MemoryBuffer stream, MessageObject message, int headOffset = 0)
         {
             ushort opcode = OpcodeType.Instance.GetOpcode(message.GetType());
@@ -48,6 +51,10 @@ namespace ET
             return opcode;
         }
         
+        /**
+         * 内网先写 actorid，再写opcode 再写 message
+         * 外网先写opcode 再写 message
+         */
         public static (ushort, MemoryBuffer) ToMemoryBuffer(AService service, ActorId actorId, object message)
         {
             MemoryBuffer memoryBuffer = service.Fetch();
