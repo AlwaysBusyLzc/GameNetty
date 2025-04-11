@@ -8,18 +8,20 @@ namespace ET
         public static byte[] Serialize(MessageObject message)
         {
             // return MemoryPackHelper.Serialize(message);
-            return null;
+            return ProtobufHelper.Serialize(message);
         }
 
         public static void Serialize(MessageObject message, MemoryBuffer stream)
         {
             // MemoryPackHelper.Serialize(message, stream);
+            ProtobufHelper.Serialize(message, stream);
         }
 		
         public static MessageObject Deserialize(Type type, byte[] bytes, int index, int count)
         {
             object o = ObjectPool.Instance.Fetch(type);
             // MemoryPackHelper.Deserialize(type, bytes, index, count, ref o);
+            ProtobufHelper.Deserialize(type, bytes, index, count, ref o);
             return o as MessageObject;
         }
 
@@ -27,6 +29,7 @@ namespace ET
         {
             object o = ObjectPool.Instance.Fetch(type);
             // MemoryPackHelper.Deserialize(type, stream, ref o);
+            ProtobufHelper.Deserialize(type, stream, ref o);
             return o as MessageObject;
         }
         
