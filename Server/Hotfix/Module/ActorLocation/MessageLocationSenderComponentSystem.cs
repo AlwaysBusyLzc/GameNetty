@@ -127,8 +127,13 @@ namespace ET.Server
 
         // 发给不会改变位置的actorlocation用这个，这种actor消息不会阻塞发送队列，性能更高，发送过去找不到actor不会重试
         // 发送过去找不到actor不会重试,用此方法，你得保证actor提前注册好了location
-        public static async ETTask<IResponse> Call(this MessageLocationSenderOneType self, long entityId, IRequest request)
+        public static async ETTask<IResponse> Call(this MessageLocationSenderOneType self, long entityId, IRequest request, bool retry = true)
         {
+            if (retry)
+            {
+                return await self.CallWithRetry(entityId, request);
+            }
+            
             MessageLocationSender messageLocationSender = self.GetOrCreate(entityId);
 
             Scene root = self.Root();
@@ -156,12 +161,12 @@ namespace ET.Server
             return await root.GetComponent<MessageSender>().Call(messageLocationSender.ActorId, request);
         }
 
-        public static void SendWithRetry(this MessageLocationSenderOneType self, long entityId, IRequest iRequest)
+        public static void Send(this MessageLocationSenderOneType self, long entityId, IRequest iRequest)
         {
             self.CallWithRetry(entityId, iRequest).Coroutine();
         }
         
-        public static async ETTask<IResponse> CallWithRetry(this MessageLocationSenderOneType self, long entityId, IRequest iRequest)
+        private static async ETTask<IResponse> CallWithRetry(this MessageLocationSenderOneType self, long entityId, IRequest iRequest)
         {
             MessageLocationSender messageLocationSender = self.GetOrCreate(entityId);
 

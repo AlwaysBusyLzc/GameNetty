@@ -28,8 +28,8 @@ namespace ET.Server
             {
                 case IRequest actorLocationRequest: // gate session收到actor rpc消息，先向actor 发送rpc请求，再将请求结果返回客户端
                 {
-                    Type reqType = actorLocationRequest.GetType();
-                    Type resType = OpcodeType.Instance.GetResponseType(reqType);
+                    // Type reqType = actorLocationRequest.GetType();
+                    // Type resType = OpcodeType.Instance.GetResponseType(reqType);
                     
                     long unitId = session.GetComponent<SessionPlayerComponent>().Player.Id;
                     int rpcId = actorLocationRequest.RpcId; // 这里要保存客户端的rpcId
@@ -45,9 +45,10 @@ namespace ET.Server
                 }
                 case IMessage actorLocationMessage:
                 {
-                    long unitId = session.GetComponent<SessionPlayerComponent>().Player.Id;
-                    root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Send(unitId, actorLocationMessage);
-                    break;
+                    throw new Exception($"client send to server must req, {message.GetType().FullName}");
+                    // long unitId = session.GetComponent<SessionPlayerComponent>().Player.Id;
+                    // root.GetComponent<MessageLocationSenderComponent>().Get(LocationType.Unit).Send(unitId, actorLocationMessage);
+                    // break;
                 }
             
                 default:
