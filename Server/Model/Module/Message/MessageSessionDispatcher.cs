@@ -64,6 +64,17 @@ namespace ET
             this.handlers[opcode].Add(handler);
         }
 
+        public bool CanHandleMessage(Type msgType)
+        {
+            if (this.handlers.ContainsKey(OpcodeType.Instance.GetOpcode(msgType)))
+            {
+                return true;
+            }
+
+            return false;
+        }
+        
+
         public void Handle(Session session, object message)
         {
             List<MessageSessionDispatcherInfo> actions;
